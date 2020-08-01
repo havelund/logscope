@@ -56,6 +56,8 @@ This specification is illustrated by the following timeline:
 
 <a href="logscope-timeline.pdf">Time line</a>
 
+<embed src="logscope-timeline.pdf" width="800px" height="2100px" />
+
 ## An Example Automaton Specification
 
 The same property can also be stated in the lower level automaton language into which the temporal patterns are mapped. 
