@@ -1,0 +1,8 @@
+digraph states {
+node [shape = circle];
+    node_S1[label="@ S1",style=filled,color=lightgrey];
+    node_S2[label="S2(x,y)",shape=invhouse,color=red];
+    node_S3[label="S3(x,y)"];
+    node_S1 -> node_S2[label="COMMAND{Type : \"FSW\",Number : y,Stem : x}"];
+    node_S2 -> node_S3[label="EVR{Number : y,Success : x}"];
+}

@@ -1,0 +1,13 @@
+
+
+import lsm.lsm as lsm
+
+log = [
+          {"OBJ_TYPE" : "COMMAND", "Type" : "FlightSoftWare", "Name" : "PICT", "Time" : 1900},
+          {"OBJ_TYPE" : "EVR", "Name" : "PICT", "Status" : "dispatch"},
+          {"OBJ_TYPE" : "EVR", "Name" : "PICT", "Status" : "success", "Time" : 2950}        
+       ]
+           
+lsm.setResultDir("RESULTS")   
+observer = lsm.Observer("spec")
+observer.monitor(log)

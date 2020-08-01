@@ -1,0 +1,29 @@
+COMMAND 1 {
+  OBJ_TYPE := "COMMAND" - str
+  Type := "FSW" - str
+  Number := 231 - int
+  Stem := "PICT" - str
+}
+
+EVR 2 {
+  OBJ_TYPE := "EVR" - str
+  Number := 231 - int
+  Dispatch := "PICT" - str
+}
+
+CHANNEL 3 {
+  DataNumber := 5 - int
+  OBJ_TYPE := "CHANNEL" - str
+}
+
+EVR 4 {
+  OBJ_TYPE := "EVR" - str
+  Number := 231 - int
+  Success := "PICT" - str
+}
+
+PRODUCT 5 {
+  OBJ_TYPE := "PRODUCT" - str
+  ImageSize := 1200 - int
+}
+
