@@ -16,6 +16,10 @@ Logs can for example be generated from a running software system. LogScope assum
 Logscope was developed around 2008-2009 for the MSL FIT team,
 and was used for a period.
 
+## Python 2
+
+LogScope only compiles with Python 2 (not Python 3 at this point). The latest final version of Python 2 is version [2.7.18](https://www.python.org/downloads/release/python-2718/). Moving to Python 3 would be a minior effort. Contact me if this is crucial for your progress.
+
 ## Installation
 
 Let `DIR` be the directory where you install LogScope. Do the following:
