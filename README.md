@@ -54,8 +54,7 @@ pattern P :
 
 This specification is illustrated by the following timeline:
 
-<a href="logscope-timeline.pdf" tabindex="-1"><strong>click here</strong></a>
-
+<img src="logscope-timeline.pdf" height=400 width=700 align=center>
 
 ## An Example Automaton Specification
 
