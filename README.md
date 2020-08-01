@@ -1,5 +1,5 @@
 
-<img src="logscope-logo.pdf" height=100 width=130 align=right>
+<img src="logscope-logo.png" height=100 width=130 align=right>
 
 # LogScope 
 
@@ -54,7 +54,7 @@ pattern P :
 
 This specification is illustrated by the following timeline:
 
-<img src="logscope-timeline" height=400 width=700 align=center>
+![Time line](logscope-timeline.png)
 
 ## An Example Automaton Specification
 
