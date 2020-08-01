@@ -6,7 +6,7 @@
 ## Specification-Based Log File Analysis</title>
 
 - User Manual : [logscope-manual.pdf](logscope-manual.pdf)
-- Download : [logscope.tar.gz](logscope.tar.gz)
+- Download : [logscope.zip](logscope.zip) - the sources in `src`
 - Slides : [compass09-logscope.ppt](compass09-logscope.ppt)
 
 LogScope is a Python program for analyzing logs by checking them against log pattern specifications. The specification language is flexible, powerful and easy to use.
