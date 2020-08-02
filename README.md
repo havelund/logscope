@@ -1,20 +1,23 @@
 
-<img src="logscope-logo.png" height=100 width=130 align=right>
+<img src="figures/logscope-logo.png" height=100 width=130 align=right>
 
 # LogScope 
 
 ## Specification-Based Log File Analysis</title>
 
-- User Manual : [logscope-manual.pdf](logscope-manual.pdf)
+- User Manual : [manuals/logscope-manual.pdf](manuals/logscope-manual.pdf)
 - Download : [logscope.zip](logscope.zip) - the sources in `src`
-- Slides : [compass09-logscope.ppt](compass09-logscope.ppt)
+- Slides : [slides/compass09-logscope.ppt](slides/compass09-logscope.ppt)
+- Paper : [papers/iaiaa-logscope10.pdf](papers/iaiaa-logscope10.pdf)
+- Paper (shorter) : [papers/icse-logscope10.pdf](papers/icse-logscope10.pdf)
+- Paper (yet shorter) : [papers/fma-logscope09.pdf](papers/fma-logscope09.pdf)
 
 LogScope is a Python program for analyzing logs by checking them against log pattern specifications. The specification language is flexible, powerful and easy to use.
 
 Logs can for example be generated from a running software system. LogScope assumes that logs are on a special form: Python sequences of events, where an event is a Python dictionary, mapping field names to values. It should be easy to convert any log file format to this format by writing a log converter (in Python for example).
 
 Logscope was developed around 2008-2009 for the MSL FIT team,
-and was used for a period.
+and was used for a period. The work received JPL's internal Mariner Award in August 2009.
 
 ## Python 2
 
@@ -58,7 +61,7 @@ pattern P :
 
 This specification is illustrated by the following timeline:
 
-![Time line](logscope-timeline.png)
+![Time line](figures/logscope-timeline.png)
 
 ## An Example Automaton Specification
 
@@ -83,7 +86,7 @@ The same property can also be stated in the lower level automaton language into 
 ```
 Such automata is visualized by the tool as follows:
 
-![Automaton](logscope-graphviz.png)
+![Automaton](figures/logscope-graphviz.png)
 
 ## An Example Python Script
 
