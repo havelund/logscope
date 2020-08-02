@@ -5,7 +5,7 @@
 
 ## Specification-Based Log File Analysis</title>
 
-- User Manual : [manuals/logscope-manual-2009.pdf](manuals/logscope-manual-2009.pdf)
+- User Manual : [manuals/logscope-manual-2008.pdf](manuals/logscope-manual-2008.pdf)
 - Download : [logscope.zip](logscope.zip) - the sources in `src`
 - Slides : [slides/compass09-logscope.ppt](slides/compass09-logscope.ppt)
 - Paper : [papers/iaiaa-logscope10.pdf](papers/iaiaa-logscope10.pdf)
