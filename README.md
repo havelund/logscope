@@ -3,17 +3,6 @@
 
 # LogScope 
 
-## Credits
-
-LogScope was developed by:
-
-- [Alex Groce](https://agroce.github.io)
-- [Klaus Havelund](http://havelund.com)
-
-at Jet Propulsion Laboratory during 2010 in support for the 
-[Mars Science Laboratory](https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/) 
-(MSL) mission.
-
 ## Specification-Based Log File Analysis</title>
 
 - User Manual : [manuals/logscope-manual-2008.pdf](manuals/logscope-manual-2008.pdf)
@@ -160,6 +149,15 @@ Statistics {
 }
 ```
 
-## For more information
+## Credits
 
-Contact Klaus Havelund at `Klaus.Havelund@jpl.nasa.gov`
+LogScope was developed by:
+
+- [Alex Groce](https://agroce.github.io)
+- [Klaus Havelund](http://havelund.com)
+
+at [Jet Propulsion Laboratory](https://www.jpl.nasa.gov/) (JPL) during 2008-2010 in support for the 
+[Mars Science Laboratory](https://www.jpl.nasa.gov/missions/mars-science-laboratory-curiosity-rover-msl/) 
+(MSL) mission.
+
+
