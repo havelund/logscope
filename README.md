@@ -3,7 +3,7 @@
 
 # LogScope 
 
-## Specification-Based Log File Analysis</title>
+## Specification-Based Log File Analysis
 
 - User Manual : [manual/logscope-manual-2008.pdf](manuals/logscope-manual-2008.pdf)
 - Download : [logscope.zip](logscope.zip) - the sources in `src`
