@@ -6,7 +6,6 @@
 ## Specification-Based Log File Analysis
 
 - User Manual : [manual/logscope-manual-2008.pdf](manual/logscope-manual-2008.pdf)
-- Download : [logscope.zip](logscope.zip) - the sources in `src`
 - Slides : [slides/compass09-logscope.ppt](slides/compass09-logscope.ppt)
 - Paper : [papers/iaiaa-logscope10.pdf](papers/iaiaa-logscope10.pdf)
 - Paper (shorter) : [papers/icse-logscope10.pdf](papers/icse-logscope10.pdf)
@@ -25,13 +24,13 @@ LogScope only compiles with Python 2 (not Python 3 at this point). The latest fi
 
 ## Installation
 
-Let `DIR` be the directory where you install LogScope. Do the following:
+Let `DIR` be the directory where you install LogScope. Do the following to run LogScope from the command line:
 
 ```bash
-$ cd DIR
-$ unzip logscope.zip
 $ export PYTHONPATH=$PYTHONPATH:DIR/logscope
 ```
+
+or use LogScope in a IDE.
 
 ## Running LogScope
 
