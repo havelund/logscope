@@ -1,0 +1,156 @@
+
+============================
+       RESULTS FOR P1: 
+============================
+
+No errors detected!
+
+Statistics {
+  COMMAND :
+      {'Type': 'FSW', 'Number': 231, 'Stem': 'PICT'} -> 1
+  EVR :
+      {'Number': 231, 'Success': 'PICT'} -> 1
+}
+
+============================
+       RESULTS FOR P2: 
+============================
+
+No errors detected!
+
+Statistics {
+  COMMAND :
+      {'Type': 'FSW', 'Number': 231, 'Stem': 'PICT'} -> 1
+}
+
+============================
+       RESULTS FOR P3: 
+============================
+
+No errors detected!
+
+Statistics {
+  COMMAND :
+      {'Type': 'FSW', 'Number': 231, 'Stem': 'PICT'} -> 1
+  EVR :
+      {'Number': 231, 'Dispatch': 'PICT'} -> 1
+      {'Number': 231, 'Success': 'PICT'} -> 1
+}
+
+============================
+       RESULTS FOR P4: 
+============================
+
+No errors detected!
+
+Statistics {
+  COMMAND :
+      {'Type': 'FSW', 'Number': 231, 'Stem': 'PICT'} -> 1
+  EVR :
+      {'Number': 231, 'Dispatch': 'PICT'} -> 1
+      {'Number': 231, 'Success': 'PICT'} -> 1
+}
+
+============================
+       RESULTS FOR P5: 
+============================
+
+No errors detected!
+
+Statistics {
+  CHANNEL :
+      {'DataNumber': 5} -> 1
+  COMMAND :
+      {'Type': 'FSW', 'Stem': 'PICT'} -> 1
+  PRODUCT :
+      {'ImageSize': 1200} -> 1
+}
+
+============================
+       RESULTS FOR P6: 
+============================
+
+No errors detected!
+
+Statistics {
+  CHANNEL :
+      {'DataNumber': 5} -> 1
+  COMMAND :
+      {'Type': 'FSW', 'Stem': 'PICT'} -> 1
+  PRODUCT :
+      {'ImageSize': 1200} -> 1
+}
+
+============================
+       RESULTS FOR A_P1: 
+============================
+
+No errors detected!
+
+Statistics {
+  COMMAND :
+      {'Type': 'FSW', 'Number': 231, 'Stem': 'PICT'} -> 1
+  EVR :
+      {'Number': 231, 'Success': 'PICT'} -> 1
+}
+
+============================
+       RESULTS FOR A_P3: 
+============================
+
+No errors detected!
+
+Statistics {
+  COMMAND :
+      {'Type': 'FSW', 'Number': 231, 'Stem': 'PICT'} -> 1
+  EVR :
+      {'Number': 231, 'Dispatch': 'PICT'} -> 1
+      {'Number': 231, 'Success': 'PICT'} -> 1
+}
+
+============================
+       RESULTS FOR A_P4: 
+============================
+
+No errors detected!
+
+Statistics {
+  COMMAND :
+      {'Type': 'FSW', 'Number': 231, 'Stem': 'PICT'} -> 1
+  EVR :
+      {'Number': 231, 'Dispatch': 'PICT'} -> 1
+      {'Number': 231, 'Success': 'PICT'} -> 1
+}
+
+============================
+       RESULTS FOR A_P3.2: 
+============================
+
+No errors detected!
+
+Statistics {
+  COMMAND :
+      {'Type': 'FSW', 'Number': 231, 'Stem': 'PICT'} -> 1
+  EVR :
+      {'Number': 231, 'Dispatch': 'PICT'} -> 1
+      {'Number': 231, 'Success': 'PICT'} -> 1
+}
+
+========================
+   Summary of Errors:
+========================
+
+A_P1    :  0  
+A_P3    :  0  
+A_P3.2  :  0  
+A_P4    :  0  
+P1      :  0  
+P2      :  0  
+P3      :  0  
+P4      :  0  
+P5      :  0  
+P6      :  0  
+
+specification was satisfied
+
+5 events processed in 0 minutes and 0.00445 seconds (1123 events/sec)

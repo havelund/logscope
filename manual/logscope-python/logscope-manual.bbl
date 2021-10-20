@@ -1,0 +1,64 @@
+\begin{thebibliography}{10}
+
+\bibitem{barringer-ruler-07}
+H.~Barringer, D.~Rydeheard, and K.~Havelund.
+\newblock {Rule Systems for Run-Time Monitoring: from Eagle to RuleR}.
+\newblock In {\em Proc. of the 7th International Workshop on Runtime
+  Verification (RV'07)}, volume 4839 of {\em LNCS}, Vancouver, Canada, 2007.
+  Springer.
+
+\bibitem{barringer-ruler-journal-08}
+H.~Barringer, D.~Rydeheard, and K.~Havelund.
+\newblock {Rule Systems for Run-Time Monitoring: from Eagle to RuleR}.
+\newblock {\em Journal of Logic and Computation}, 2008.
+\newblock Extended version of \cite{barringer-ruler-07}, to appear.
+
+\bibitem{barringer-tutorial-08}
+H.~Barringer, D.E Rydeheard, and K.~Havelund.
+\newblock {RuleR: A Tutorial Guide}.
+\newblock Available at: \verb+http://www.cs.man.ac.uk/~howard/LPA.html+, 2008.
+
+\bibitem{chen-rosu-2007-oopsla}
+F.~Chen and G.~Ro\c{s}u.
+\newblock {MOP: An Efficient and Generic Runtime Verification Framework}.
+\newblock In {\em Object-Oriented Programming, Systems, Languages and
+  Applications (OOPSLA'07)}, 2007.
+
+\bibitem{statl-01}
+S.~Eckmann, G.~Vigna, and R.~A. Kemmerer.
+\newblock {STATL Definition}.
+\newblock Reliable Software Group, Department of Computer Science, University
+  of California, Santa Barbara, CA 93106, June 2001.
+
+\bibitem{graphviz}
+GraphViz.
+\newblock \verb+http://www.graphviz.org+.
+
+\bibitem{havelund-rmor-08}
+K.~Havelund.
+\newblock {Runtime Verification of C Programs}.
+\newblock In {\em Proc. of the 1st TestCom/FATES conference}, volume 5047 of
+  {\em LNCS}, Tokyo, Japan, June 2008. Springer.
+
+\bibitem{havelund-rosu03c}
+K.~Havelund and G.~Ro\c{s}u.
+\newblock {Efficient Monitoring of Safety Properties}.
+\newblock {\em Software Tools for Technology Transfer}, 6(2):158--173, 2004.
+
+\bibitem{java-mac01}
+M.~Kim, S.~Kannan, I.~Lee, and O.~Sokolsky.
+\newblock {Java-MaC: a Run-time Assurance Tool for Java}.
+\newblock In {\em Proc. of the 1st International Workshop on Runtime
+  Verification (RV'01)}, volume 55(2) of {\em ENTCS}. Elsevier, 2001.
+
+\bibitem{smith-havelund-rcat-08}
+M.~Smith and K.~Havelund.
+\newblock {Requirements Capture with RCAT}.
+\newblock In {\em 16th IEEE International Requirements Engineering Conference
+  (RE'08)}, IEEE Computer Society, Barcelona, Spain, September 2008.
+
+\bibitem{rv}
+Runtime Verification.
+\newblock \verb+http://www.runtime-verification.org+.
+
+\end{thebibliography}

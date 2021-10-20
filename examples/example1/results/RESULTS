@@ -1,0 +1,87 @@
+
+============================
+       RESULTS FOR P: 
+============================
+
+Errors: 1
+
+*** violated: in hot end state:
+
+  state S3(x,begin_time) {
+    EVR{Status : s,Name : x} where contains(s, "failure") => error
+    EVR{Status : "success",Name : x,Time : end_time} where |end_time-begin_time < 100| => S4(x,begin_time,end_time)
+  }
+  with bindings: {'x': 'PICT', 'begin_time': 1900}
+
+--- error trace: ---
+
+COMMAND 1 {
+  OBJ_TYPE := "COMMAND" - str
+  Type := "FlightSoftWare" - str
+  Name := "PICT" - str
+  Time := 1900 - int
+}
+
+EVR 2 {
+  Status := "dispatch" - str
+  OBJ_TYPE := "EVR" - str
+  Name := "PICT" - str
+}
+
+
+
+Statistics {
+  COMMAND :
+      {'Type': 'FlightSoftWare', 'Name': 'PICT', 'Time': 1900} -> 1
+  EVR :
+      {'Status': 'dispatch', 'Name': 'PICT'} -> 1
+}
+
+============================
+       RESULTS FOR A: 
+============================
+
+Errors: 1
+
+*** violated: in hot end state:
+
+  state S3(x,begin_time) {
+    EVR{Status : s,Name : x} where contains(s, "failure") => error
+    EVR{Status : "success",Name : x,Time : end_time} where |end_time-begin_time < 100| => done
+  }
+  with bindings: {'x': 'PICT', 'begin_time': 1900}
+
+--- error trace: ---
+
+COMMAND 1 {
+  OBJ_TYPE := "COMMAND" - str
+  Type := "FlightSoftWare" - str
+  Name := "PICT" - str
+  Time := 1900 - int
+}
+
+EVR 2 {
+  Status := "dispatch" - str
+  OBJ_TYPE := "EVR" - str
+  Name := "PICT" - str
+}
+
+
+
+Statistics {
+  COMMAND :
+      {'Type': 'FlightSoftWare', 'Name': 'PICT', 'Time': 1900} -> 1
+  EVR :
+      {'Status': 'dispatch', 'Name': 'PICT'} -> 1
+}
+
+========================
+   Summary of Errors:
+========================
+
+A  :  1 error 
+P  :  1 error 
+
+specification was violated 2 times
+
+3 events processed in 0 minutes and 0.00111 seconds (2707 events/sec)

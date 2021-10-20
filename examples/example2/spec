@@ -1,0 +1,133 @@
+
+:::
+
+def bit(p,n):
+    '''
+    get the bitvalue of denary (base 10) number n at the equivalent binary
+    position p (binary count starts at position 0 from the right)
+    '''
+    return (int(n) >> int(p)) & 1
+
+:::
+
+
+### patterns: ###
+
+pattern P1:  COMMAND{Type : "FSW", Stem: x, Number: y} => EVR{Success: x, Number: y}  
+
+pattern P2:  COMMAND{Type : "FSW", Stem: x, Number: y} => !EVR{Failure: x, Number: y}  
+
+pattern P3 :
+  COMMAND{Type: "FSW", Stem: x, Number: y} => 
+    [
+       !EVR{DispatchFailure: x},
+ 	   EVR{Dispatch: x, Number: y}, 
+       !EVR{Failure : x, Number : y},
+	   EVR{Success: x, Number: y},
+       !EVR{Success: x, Number: y}
+    ]    
+    
+pattern P4 :
+  COMMAND{Type: "FSW", Stem: x, Number: y} => 
+    {
+       EVR{Dispatch: x, Number: y}, 
+	   [EVR{Success: x, Number: y},  !EVR{Success: x, Number: y}],
+       !EVR{DispatchFailure: x},
+       !EVR{Failure : x, Number : y}
+    }
+        
+pattern P5 :
+    COMMAND{Type: "FSW", Stem: "PICT"} => 
+    [
+       CHANNEL{DataNumber : {0 : 1, 1 :0, 2 :1}}, 
+       PRODUCT{ImageSize : [1000,2000]}
+    ]
+
+pattern P6 :
+    COMMAND{Type: "FSW", Stem: y} where |y.startswith("PIC")| =>
+    [
+        CHANNEL{DataNumber: d} where |bit(0,d)==1| and |bit(1,d)==0| and |bit(2,d)==1|,
+        PRODUCT{ImageSize : s} where less_equal(1000,s) and less_equal(s,2000)
+    ]
+
+
+### automata: ###
+    
+automaton A_P1 {
+  always S1 {
+    COMMAND{Type : "FSW", Stem : x, Number : y} => S2(x,y)
+  }
+
+  state S2(x,y) {
+    EVR{Success : x, Number : y} => done
+  }
+
+  initial S1
+  hot S2
+}
+
+automaton A_P3 {
+  always S1 {
+    COMMAND{Type : "FSW",Number : y,Stem : x} => S2(x,y)
+  }
+
+  hot state S2(x,y) {
+    EVR{DispatchFailure : x} => error
+    EVR{Number : y,Dispatch : x} => S3(x,y)
+  }
+
+  hot state S3(x,y) {
+    EVR{Failure : x,Number : y} => error
+    EVR{Number : y,Success : x} => S4(x,y)
+  }
+
+  state S4(x,y) {
+    EVR{Number : y,Success : x} => error
+  }
+}
+
+automaton A_P4 {
+  always Watch {
+    COMMAND{Type : "FSW",Number : y,Stem : x} => 
+         wD(x,y),wS(x,y),noDF(x,y),noF(x,y)
+  }
+
+  hot state wD(x,y) {
+    EVR{Number : y,Dispatch : x} => done
+  }
+
+  hot state wS(x,y) {
+    EVR{Number : y,Success : x} => noS(x,y)
+  }
+
+  state noS(x,y) {
+    EVR{Number : y,Success : x} => error
+  }
+
+  state noDF(x,y) {
+    EVR{DispatchFailure : x} => error
+  }
+
+  state noF(x,y) {
+    EVR{Failure : x,Number : y} => error
+  }
+}
+
+automaton A_P3.2 {
+  step S1 {
+    COMMAND{Type : "FSW",Stem : x, Number : y} => S2(x,y)
+  }
+
+  step S2(x,y) {
+    EVR{Dispatch : x,Number : y} => S3(x,y)
+  }
+
+  step S3(x,y) {
+    EVR{Success : x,Number : y} => S4
+  }
+
+  step S4 {}
+
+  initial S1
+  success S4
+}

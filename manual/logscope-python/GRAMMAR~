@@ -1,0 +1,20 @@
+
+
+specification ::= [pythoncode] monitor+
+
+pythoncode ::= 
+  ':::' 
+   python code defining predicates, including imports
+  ':::'
+
+event ::= type '{' constraint*, '}' ['where' predicate]
+
+predicate ::= NAME '(' argument*, ')'
+           | '|' arbitrary boolean valued python expression '|' 
+	           | predicate 'and' predicate
+	           | predicate 'or' predicate
+	           | 'not' predicate
+	           | '(' predicate ')'
+
+
+

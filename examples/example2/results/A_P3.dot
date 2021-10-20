@@ -1,0 +1,16 @@
+digraph states {
+node [shape = circle];
+    node_S1[label="@ S1",style=filled,color=lightgrey];
+    node_S2[label="S2(x,y)",shape=invhouse,color=red];
+    node_S3[label="S3(x,y)",shape=invhouse,color=red];
+    node_S4[label="S4(x,y)"];
+    node_error_1[label="# error",style=filled,color=black,fontcolor=white];
+    node_error_2[label="# error",style=filled,color=black,fontcolor=white];
+    node_error_3[label="# error",style=filled,color=black,fontcolor=white];
+    node_S1 -> node_S2[label="COMMAND{Type : \"FSW\",Number : y,Stem : x}"];
+    node_S2 -> node_error_1[label="EVR{DispatchFailure : x}"];
+    node_S2 -> node_S3[label="EVR{Number : y,Dispatch : x}"];
+    node_S3 -> node_error_2[label="EVR{Failure : x,Number : y}"];
+    node_S3 -> node_S4[label="EVR{Number : y,Success : x}"];
+    node_S4 -> node_error_3[label="EVR{Number : y,Success : x}"];
+}

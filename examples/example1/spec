@@ -1,0 +1,24 @@
+
+pattern P :
+  COMMAND{Type: "FlightSoftWare", Name: x, Time : begin_time} => 
+    [
+       EVR{Name : x, Status : "dispatch"}, 
+     ! EVR{Name : x, Status : s} where contains(s,"failure"), 
+       EVR{Name : x, Status : "success", Time : end_time} where |end_time-begin_time < 100| 
+    ]
+    
+automaton A {
+  always S1 {
+    COMMAND{Type : "FlightSoftWare",Name : x,Time : begin_time} => S2(x,begin_time)
+  }
+
+  hot state S2(x,begin_time) {
+    EVR{,Name : x, Status : "dispatch"} => S3(x,begin_time)
+  }
+
+  hot state S3(x,begin_time) {
+    EVR{Name : x, Status : s} where contains(s, "failure") => error
+    EVR{Name : x, Status : "success",Time : end_time} 
+    	where |end_time-begin_time < 100| => done
+  }
+}

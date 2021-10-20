@@ -1,0 +1,24 @@
+digraph states {
+node [shape = circle];
+    node_S1[label="@ S1",style=filled,color=lightgrey];
+    node_S2[label="S2(x,y)",shape=invhouse,color=red];
+    node_S3[label="S3(x,y)"];
+    node_S4[label="S4(x,y)",shape=invhouse,color=red];
+    node_S5[label="S5(x,y)"];
+    node_S6[label="S6(x,y)"];
+    node_S7[label="S7(x,y)"];
+    node_error_1[label="# error",style=filled,color=black,fontcolor=white];
+    node_error_2[label="# error",style=filled,color=black,fontcolor=white];
+    node_error_3[label="# error",style=filled,color=black,fontcolor=white];
+    node_P1[label="",shape=triangle,color=blue]
+    node_S1 -> node_P1[label="COMMAND{Type : \"FSW\",Number : y,Stem : x}"];
+    node_P1 -> node_S2[color=blue,style=dotted];
+    node_P1 -> node_S4[color=blue,style=dotted];
+    node_P1 -> node_S6[color=blue,style=dotted];
+    node_P1 -> node_S7[color=blue,style=dotted];
+    node_S2 -> node_S3[label="EVR{Number : y,Dispatch : x}"];
+    node_S4 -> node_S5[label="EVR{Number : y,Success : x}"];
+    node_S5 -> node_error_1[label="EVR{Number : y,Success : x}"];
+    node_S6 -> node_error_2[label="EVR{DispatchFailure : x}"];
+    node_S7 -> node_error_3[label="EVR{Failure : x,Number : y}"];
+}

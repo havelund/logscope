@@ -1,0 +1,12 @@
+digraph states {
+node [shape = circle];
+    node_S1[label="@ S1",style=filled,color=lightgrey];
+    node_S2[label="S2(x,begin_time)",shape=invhouse,color=red];
+    node_S3[label="S3(x,begin_time)",shape=invhouse,color=red];
+    node_S4[label="S4(x,begin_time,end_time)"];
+    node_error_1[label="# error",style=filled,color=black,fontcolor=white];
+    node_S1 -> node_S2[label="COMMAND{Type : \"FlightSoftWare\",Name : x,Time : begin_time}"];
+    node_S2 -> node_S3[label="EVR{Status : \"dispatch\",Name : x}"];
+    node_S3 -> node_error_1[label="EVR{Status : s,Name : x} where contains(s, \"failure\")"];
+    node_S3 -> node_S4[label="EVR{Status : \"success\",Name : x,Time : end_time} where |end_time-begin_time < 100|"];
+}

@@ -1,0 +1,2150 @@
+reduce/reduce conflict in state 16 resolved using rule 10 (states -> .).
+reduce/reduce conflict in state 16 resolved using rule 10 (states -> .).
+reduce/reduce conflict in state 16 resolved using rule 10 (states -> .).
+reduce/reduce conflict in state 16 resolved using rule 10 (states -> .).
+reduce/reduce conflict in state 16 resolved using rule 10 (states -> .).
+shift/reduce conflict in state 16 resolved as shift.
+shift/reduce conflict in state 16 resolved as shift.
+reduce/reduce conflict in state 21 resolved using rule 15 (modifiers -> .).
+shift/reduce conflict in state 21 resolved as shift.
+shift/reduce conflict in state 21 resolved as shift.
+shift/reduce conflict in state 58 resolved as shift.
+shift/reduce conflict in state 58 resolved as shift.
+shift/reduce conflict in state 58 resolved as shift.
+shift/reduce conflict in state 58 resolved as shift.
+shift/reduce conflict in state 58 resolved as shift.
+shift/reduce conflict in state 117 resolved as shift.
+shift/reduce conflict in state 117 resolved as shift.
+shift/reduce conflict in state 117 resolved as shift.
+shift/reduce conflict in state 117 resolved as shift.
+shift/reduce conflict in state 117 resolved as shift.
+
+
+Unused terminals:
+
+
+Grammar
+
+Rule 1     specification -> monitors
+Rule 2     specification -> PYTHON monitors
+Rule 3     monitors -> monitor
+Rule 4     monitors -> monitors monitor
+Rule 5     monitor -> IGNORE monitorspec
+Rule 6     monitor -> monitorspec
+Rule 7     monitorspec -> automaton
+Rule 8     monitorspec -> pattern
+Rule 9     automaton -> AUTOMATON NAME { states initial forbidden success }
+Rule 10    states -> <empty>
+Rule 11    states -> state
+Rule 12    states -> states state
+Rule 13    state -> modifiers statekind NAME { rules }
+Rule 14    state -> modifiers statekind NAME ( formals ) { rules }
+Rule 15    modifiers -> <empty>
+Rule 16    modifiers -> modifiers modifier
+Rule 17    modifiers -> modifier
+Rule 18    modifier -> HOT
+Rule 19    modifier -> INITIAL
+Rule 20    formals -> names
+Rule 21    statekind -> ALWAYS
+Rule 22    statekind -> STATE
+Rule 23    statekind -> STEP
+Rule 24    rules -> <empty>
+Rule 25    rules -> rule
+Rule 26    rules -> rules rule
+Rule 27    rule -> conditions TRANS actions
+Rule 28    conditions -> event
+Rule 29    event -> type { constraints }
+Rule 30    event -> type { constraints } WHERE predicate
+Rule 31    type -> COMMAND
+Rule 32    type -> EVR
+Rule 33    type -> CHANNEL
+Rule 34    type -> CHANGE
+Rule 35    type -> PRODUCT
+Rule 36    constraints -> <empty>
+Rule 37    constraints -> constraint
+Rule 38    constraints -> constraints , constraint
+Rule 39    constraint -> NAME : range
+Rule 40    range -> NUMBER
+Rule 41    range -> STRING
+Rule 42    range -> [ NUMBER , NUMBER ]
+Rule 43    range -> { bitvalues }
+Rule 44    range -> NAME
+Rule 45    bitvalues -> <empty>
+Rule 46    bitvalues -> bitvalue
+Rule 47    bitvalues -> bitvalues , bitvalue
+Rule 48    bitvalue -> value : range
+Rule 49    value -> NUMBER
+Rule 50    value -> STRING
+Rule 51    predicate -> NAME ( arguments )
+Rule 52    predicate -> EXPRESSION
+Rule 53    predicate -> predicate AND predicate
+Rule 54    predicate -> predicate OR predicate
+Rule 55    predicate -> NOT predicate
+Rule 56    predicate -> ( predicate )
+Rule 57    actions -> action
+Rule 58    actions -> actions , action
+Rule 59    action -> NAME
+Rule 60    action -> NAME ( arguments )
+Rule 61    action -> DONE
+Rule 62    action -> ERROR
+Rule 63    arguments -> argument
+Rule 64    arguments -> arguments , argument
+Rule 65    argument -> NUMBER
+Rule 66    argument -> STRING
+Rule 67    argument -> NAME
+Rule 68    initial -> <empty>
+Rule 69    initial -> INITIAL actions
+Rule 70    forbidden -> <empty>
+Rule 71    forbidden -> HOT names
+Rule 72    names -> NAME
+Rule 73    names -> names , NAME
+Rule 74    success -> <empty>
+Rule 75    success -> SUCCESS names
+Rule 76    pattern -> PATTERN NAME : event TRANS consequence
+Rule 77    consequence -> event
+Rule 78    consequence -> ! event
+Rule 79    consequence -> [ consequencelist ]
+Rule 80    consequence -> { consequencelist }
+Rule 81    consequencelist -> consequence
+Rule 82    consequencelist -> consequencelist , consequence
+
+Terminals, with rules where they appear
+
+!                    : 78
+(                    : 14 51 56 60
+)                    : 14 51 56 60
+,                    : 38 42 47 58 64 73 82
+:                    : 39 48 76
+ALWAYS               : 21
+AND                  : 53
+AUTOMATON            : 9
+CHANGE               : 34
+CHANNEL              : 33
+COMMAND              : 31
+DONE                 : 61
+ERROR                : 62
+EVR                  : 32
+EXPRESSION           : 52
+HOT                  : 18 71
+IGNORE               : 5
+INITIAL              : 19 69
+NAME                 : 9 13 14 39 44 51 59 60 67 72 73 76
+NOT                  : 55
+NUMBER               : 40 42 42 49 65
+OR                   : 54
+PATTERN              : 76
+PRODUCT              : 35
+PYTHON               : 2
+STATE                : 22
+STEP                 : 23
+STRING               : 41 50 66
+SUCCESS              : 75
+TRANS                : 27 76
+WHERE                : 30
+[                    : 42 79
+]                    : 42 79
+error                : 
+{                    : 9 13 14 29 30 43 80
+}                    : 9 13 14 29 30 43 80
+
+Nonterminals, with rules where they appear
+
+action               : 57 58
+actions              : 27 58 69
+argument             : 63 64
+arguments            : 51 60 64
+automaton            : 7
+bitvalue             : 46 47
+bitvalues            : 43 47
+conditions           : 27
+consequence          : 76 81 82
+consequencelist      : 79 80 82
+constraint           : 37 38
+constraints          : 29 30 38
+event                : 28 76 77 78
+forbidden            : 9
+formals              : 14
+initial              : 9
+modifier             : 16 17
+modifiers            : 13 14 16
+monitor              : 3 4
+monitors             : 1 2 4
+monitorspec          : 5 6
+names                : 20 71 73 75
+pattern              : 8
+predicate            : 30 53 53 54 54 55 56
+range                : 39 48
+rule                 : 25 26
+rules                : 13 14 26
+specification        : 0
+state                : 11 12
+statekind            : 13 14
+states               : 9 12
+success              : 9
+type                 : 29 30
+value                : 48
+
+
+Parsing method: LALR
+
+
+state 0
+
+    (0) S' -> . specification
+    (1) specification -> . monitors
+    (2) specification -> . PYTHON monitors
+    (3) monitors -> . monitor
+    (4) monitors -> . monitors monitor
+    (5) monitor -> . IGNORE monitorspec
+    (6) monitor -> . monitorspec
+    (7) monitorspec -> . automaton
+    (8) monitorspec -> . pattern
+    (9) automaton -> . AUTOMATON NAME { states initial forbidden success }
+    (76) pattern -> . PATTERN NAME : event TRANS consequence
+
+    PYTHON          shift and go to state 4
+    IGNORE          shift and go to state 7
+    AUTOMATON       shift and go to state 2
+    PATTERN         shift and go to state 8
+
+
+    monitor                        shift and go to state 3
+    pattern                        shift and go to state 5
+    specification                  shift and go to state 6
+    monitorspec                    shift and go to state 1
+    automaton                      shift and go to state 9
+    monitors                       shift and go to state 10
+
+state 1
+
+    (6) monitor -> monitorspec .
+
+    IGNORE          reduce using rule 6 (monitor -> monitorspec .)
+    AUTOMATON       reduce using rule 6 (monitor -> monitorspec .)
+    PATTERN         reduce using rule 6 (monitor -> monitorspec .)
+    $end            reduce using rule 6 (monitor -> monitorspec .)
+
+
+
+state 2
+
+    (9) automaton -> AUTOMATON . NAME { states initial forbidden success }
+
+    NAME            shift and go to state 11
+
+
+
+state 3
+
+    (3) monitors -> monitor .
+
+    IGNORE          reduce using rule 3 (monitors -> monitor .)
+    AUTOMATON       reduce using rule 3 (monitors -> monitor .)
+    PATTERN         reduce using rule 3 (monitors -> monitor .)
+    $end            reduce using rule 3 (monitors -> monitor .)
+
+
+
+state 4
+
+    (2) specification -> PYTHON . monitors
+    (3) monitors -> . monitor
+    (4) monitors -> . monitors monitor
+    (5) monitor -> . IGNORE monitorspec
+    (6) monitor -> . monitorspec
+    (7) monitorspec -> . automaton
+    (8) monitorspec -> . pattern
+    (9) automaton -> . AUTOMATON NAME { states initial forbidden success }
+    (76) pattern -> . PATTERN NAME : event TRANS consequence
+
+    IGNORE          shift and go to state 7
+    AUTOMATON       shift and go to state 2
+    PATTERN         shift and go to state 8
+
+
+    monitor                        shift and go to state 3
+    pattern                        shift and go to state 5
+    monitorspec                    shift and go to state 1
+    automaton                      shift and go to state 9
+    monitors                       shift and go to state 12
+
+state 5
+
+    (8) monitorspec -> pattern .
+
+    IGNORE          reduce using rule 8 (monitorspec -> pattern .)
+    AUTOMATON       reduce using rule 8 (monitorspec -> pattern .)
+    PATTERN         reduce using rule 8 (monitorspec -> pattern .)
+    $end            reduce using rule 8 (monitorspec -> pattern .)
+
+
+
+state 6
+
+    (0) S' -> specification .
+
+
+
+
+state 7
+
+    (5) monitor -> IGNORE . monitorspec
+    (7) monitorspec -> . automaton
+    (8) monitorspec -> . pattern
+    (9) automaton -> . AUTOMATON NAME { states initial forbidden success }
+    (76) pattern -> . PATTERN NAME : event TRANS consequence
+
+    AUTOMATON       shift and go to state 2
+    PATTERN         shift and go to state 8
+
+
+    pattern                        shift and go to state 5
+    monitorspec                    shift and go to state 13
+    automaton                      shift and go to state 9
+
+state 8
+
+    (76) pattern -> PATTERN . NAME : event TRANS consequence
+
+    NAME            shift and go to state 14
+
+
+
+state 9
+
+    (7) monitorspec -> automaton .
+
+    IGNORE          reduce using rule 7 (monitorspec -> automaton .)
+    AUTOMATON       reduce using rule 7 (monitorspec -> automaton .)
+    PATTERN         reduce using rule 7 (monitorspec -> automaton .)
+    $end            reduce using rule 7 (monitorspec -> automaton .)
+
+
+
+state 10
+
+    (1) specification -> monitors .
+    (4) monitors -> monitors . monitor
+    (5) monitor -> . IGNORE monitorspec
+    (6) monitor -> . monitorspec
+    (7) monitorspec -> . automaton
+    (8) monitorspec -> . pattern
+    (9) automaton -> . AUTOMATON NAME { states initial forbidden success }
+    (76) pattern -> . PATTERN NAME : event TRANS consequence
+
+    $end            reduce using rule 1 (specification -> monitors .)
+    IGNORE          shift and go to state 7
+    AUTOMATON       shift and go to state 2
+    PATTERN         shift and go to state 8
+
+
+    monitor                        shift and go to state 15
+    pattern                        shift and go to state 5
+    monitorspec                    shift and go to state 1
+    automaton                      shift and go to state 9
+
+state 11
+
+    (9) automaton -> AUTOMATON NAME . { states initial forbidden success }
+
+    {               shift and go to state 16
+
+
+
+state 12
+
+    (2) specification -> PYTHON monitors .
+    (4) monitors -> monitors . monitor
+    (5) monitor -> . IGNORE monitorspec
+    (6) monitor -> . monitorspec
+    (7) monitorspec -> . automaton
+    (8) monitorspec -> . pattern
+    (9) automaton -> . AUTOMATON NAME { states initial forbidden success }
+    (76) pattern -> . PATTERN NAME : event TRANS consequence
+
+    $end            reduce using rule 2 (specification -> PYTHON monitors .)
+    IGNORE          shift and go to state 7
+    AUTOMATON       shift and go to state 2
+    PATTERN         shift and go to state 8
+
+
+    monitor                        shift and go to state 15
+    pattern                        shift and go to state 5
+    monitorspec                    shift and go to state 1
+    automaton                      shift and go to state 9
+
+state 13
+
+    (5) monitor -> IGNORE monitorspec .
+
+    IGNORE          reduce using rule 5 (monitor -> IGNORE monitorspec .)
+    AUTOMATON       reduce using rule 5 (monitor -> IGNORE monitorspec .)
+    PATTERN         reduce using rule 5 (monitor -> IGNORE monitorspec .)
+    $end            reduce using rule 5 (monitor -> IGNORE monitorspec .)
+
+
+
+state 14
+
+    (76) pattern -> PATTERN NAME . : event TRANS consequence
+
+    :               shift and go to state 17
+
+
+
+state 15
+
+    (4) monitors -> monitors monitor .
+
+    IGNORE          reduce using rule 4 (monitors -> monitors monitor .)
+    AUTOMATON       reduce using rule 4 (monitors -> monitors monitor .)
+    PATTERN         reduce using rule 4 (monitors -> monitors monitor .)
+    $end            reduce using rule 4 (monitors -> monitors monitor .)
+
+
+
+state 16
+
+    (9) automaton -> AUTOMATON NAME { . states initial forbidden success }
+    (10) states -> .
+    (11) states -> . state
+    (12) states -> . states state
+    (13) state -> . modifiers statekind NAME { rules }
+    (14) state -> . modifiers statekind NAME ( formals ) { rules }
+    (15) modifiers -> .
+    (16) modifiers -> . modifiers modifier
+    (17) modifiers -> . modifier
+    (18) modifier -> . HOT
+    (19) modifier -> . INITIAL
+
+  ! reduce/reduce conflict for ALWAYS resolved using rule 10 (states -> .).
+  ! reduce/reduce conflict for STATE resolved using rule 10 (states -> .).
+  ! reduce/reduce conflict for STEP resolved using rule 10 (states -> .).
+  ! reduce/reduce conflict for HOT resolved using rule 10 (states -> .).
+  ! reduce/reduce conflict for INITIAL resolved using rule 10 (states -> .).
+  ! shift/reduce conflict for HOT resolved as shift.
+  ! shift/reduce conflict for INITIAL resolved as shift.
+    SUCCESS         reduce using rule 10 (states -> .)
+    }               reduce using rule 10 (states -> .)
+    ALWAYS          reduce using rule 10 (states -> .)
+    STATE           reduce using rule 10 (states -> .)
+    STEP            reduce using rule 10 (states -> .)
+    HOT             shift and go to state 20
+    INITIAL         shift and go to state 23
+
+  ! INITIAL         [ reduce using rule 10 (states -> .) ]
+  ! HOT             [ reduce using rule 10 (states -> .) ]
+  ! ALWAYS          [ reduce using rule 15 (modifiers -> .) ]
+  ! STATE           [ reduce using rule 15 (modifiers -> .) ]
+  ! STEP            [ reduce using rule 15 (modifiers -> .) ]
+  ! HOT             [ reduce using rule 15 (modifiers -> .) ]
+  ! INITIAL         [ reduce using rule 15 (modifiers -> .) ]
+
+    modifiers                      shift and go to state 19
+    states                         shift and go to state 21
+    state                          shift and go to state 22
+    modifier                       shift and go to state 18
+
+state 17
+
+    (76) pattern -> PATTERN NAME : . event TRANS consequence
+    (29) event -> . type { constraints }
+    (30) event -> . type { constraints } WHERE predicate
+    (31) type -> . COMMAND
+    (32) type -> . EVR
+    (33) type -> . CHANNEL
+    (34) type -> . CHANGE
+    (35) type -> . PRODUCT
+
+    COMMAND         shift and go to state 25
+    EVR             shift and go to state 27
+    CHANNEL         shift and go to state 30
+    CHANGE          shift and go to state 26
+    PRODUCT         shift and go to state 24
+
+
+    type                           shift and go to state 28
+    event                          shift and go to state 29
+
+state 18
+
+    (17) modifiers -> modifier .
+
+    ALWAYS          reduce using rule 17 (modifiers -> modifier .)
+    STATE           reduce using rule 17 (modifiers -> modifier .)
+    STEP            reduce using rule 17 (modifiers -> modifier .)
+    HOT             reduce using rule 17 (modifiers -> modifier .)
+    INITIAL         reduce using rule 17 (modifiers -> modifier .)
+
+
+
+state 19
+
+    (13) state -> modifiers . statekind NAME { rules }
+    (14) state -> modifiers . statekind NAME ( formals ) { rules }
+    (16) modifiers -> modifiers . modifier
+    (21) statekind -> . ALWAYS
+    (22) statekind -> . STATE
+    (23) statekind -> . STEP
+    (18) modifier -> . HOT
+    (19) modifier -> . INITIAL
+
+    ALWAYS          shift and go to state 33
+    STATE           shift and go to state 32
+    STEP            shift and go to state 31
+    HOT             shift and go to state 20
+    INITIAL         shift and go to state 23
+
+
+    statekind                      shift and go to state 34
+    modifier                       shift and go to state 35
+
+state 20
+
+    (18) modifier -> HOT .
+
+    ALWAYS          reduce using rule 18 (modifier -> HOT .)
+    STATE           reduce using rule 18 (modifier -> HOT .)
+    STEP            reduce using rule 18 (modifier -> HOT .)
+    HOT             reduce using rule 18 (modifier -> HOT .)
+    INITIAL         reduce using rule 18 (modifier -> HOT .)
+
+
+
+state 21
+
+    (9) automaton -> AUTOMATON NAME { states . initial forbidden success }
+    (12) states -> states . state
+    (68) initial -> .
+    (69) initial -> . INITIAL actions
+    (13) state -> . modifiers statekind NAME { rules }
+    (14) state -> . modifiers statekind NAME ( formals ) { rules }
+    (15) modifiers -> .
+    (16) modifiers -> . modifiers modifier
+    (17) modifiers -> . modifier
+    (18) modifier -> . HOT
+    (19) modifier -> . INITIAL
+
+  ! reduce/reduce conflict for HOT resolved using rule 15 (modifiers -> .).
+  ! shift/reduce conflict for INITIAL resolved as shift.
+  ! shift/reduce conflict for HOT resolved as shift.
+    SUCCESS         reduce using rule 68 (initial -> .)
+    }               reduce using rule 68 (initial -> .)
+    INITIAL         shift and go to state 36
+    ALWAYS          reduce using rule 15 (modifiers -> .)
+    STATE           reduce using rule 15 (modifiers -> .)
+    STEP            reduce using rule 15 (modifiers -> .)
+    HOT             shift and go to state 20
+
+  ! HOT             [ reduce using rule 68 (initial -> .) ]
+  ! HOT             [ reduce using rule 15 (modifiers -> .) ]
+  ! INITIAL         [ reduce using rule 15 (modifiers -> .) ]
+
+    modifiers                      shift and go to state 19
+    initial                        shift and go to state 37
+    state                          shift and go to state 38
+    modifier                       shift and go to state 18
+
+state 22
+
+    (11) states -> state .
+
+    INITIAL         reduce using rule 11 (states -> state .)
+    HOT             reduce using rule 11 (states -> state .)
+    SUCCESS         reduce using rule 11 (states -> state .)
+    }               reduce using rule 11 (states -> state .)
+    ALWAYS          reduce using rule 11 (states -> state .)
+    STATE           reduce using rule 11 (states -> state .)
+    STEP            reduce using rule 11 (states -> state .)
+
+
+
+state 23
+
+    (19) modifier -> INITIAL .
+
+    ALWAYS          reduce using rule 19 (modifier -> INITIAL .)
+    STATE           reduce using rule 19 (modifier -> INITIAL .)
+    STEP            reduce using rule 19 (modifier -> INITIAL .)
+    HOT             reduce using rule 19 (modifier -> INITIAL .)
+    INITIAL         reduce using rule 19 (modifier -> INITIAL .)
+
+
+
+state 24
+
+    (35) type -> PRODUCT .
+
+    {               reduce using rule 35 (type -> PRODUCT .)
+
+
+
+state 25
+
+    (31) type -> COMMAND .
+
+    {               reduce using rule 31 (type -> COMMAND .)
+
+
+
+state 26
+
+    (34) type -> CHANGE .
+
+    {               reduce using rule 34 (type -> CHANGE .)
+
+
+
+state 27
+
+    (32) type -> EVR .
+
+    {               reduce using rule 32 (type -> EVR .)
+
+
+
+state 28
+
+    (29) event -> type . { constraints }
+    (30) event -> type . { constraints } WHERE predicate
+
+    {               shift and go to state 39
+
+
+
+state 29
+
+    (76) pattern -> PATTERN NAME : event . TRANS consequence
+
+    TRANS           shift and go to state 40
+
+
+
+state 30
+
+    (33) type -> CHANNEL .
+
+    {               reduce using rule 33 (type -> CHANNEL .)
+
+
+
+state 31
+
+    (23) statekind -> STEP .
+
+    NAME            reduce using rule 23 (statekind -> STEP .)
+
+
+
+state 32
+
+    (22) statekind -> STATE .
+
+    NAME            reduce using rule 22 (statekind -> STATE .)
+
+
+
+state 33
+
+    (21) statekind -> ALWAYS .
+
+    NAME            reduce using rule 21 (statekind -> ALWAYS .)
+
+
+
+state 34
+
+    (13) state -> modifiers statekind . NAME { rules }
+    (14) state -> modifiers statekind . NAME ( formals ) { rules }
+
+    NAME            shift and go to state 41
+
+
+
+state 35
+
+    (16) modifiers -> modifiers modifier .
+
+    ALWAYS          reduce using rule 16 (modifiers -> modifiers modifier .)
+    STATE           reduce using rule 16 (modifiers -> modifiers modifier .)
+    STEP            reduce using rule 16 (modifiers -> modifiers modifier .)
+    HOT             reduce using rule 16 (modifiers -> modifiers modifier .)
+    INITIAL         reduce using rule 16 (modifiers -> modifiers modifier .)
+
+
+
+state 36
+
+    (69) initial -> INITIAL . actions
+    (19) modifier -> INITIAL .
+    (57) actions -> . action
+    (58) actions -> . actions , action
+    (59) action -> . NAME
+    (60) action -> . NAME ( arguments )
+    (61) action -> . DONE
+    (62) action -> . ERROR
+
+    ALWAYS          reduce using rule 19 (modifier -> INITIAL .)
+    STATE           reduce using rule 19 (modifier -> INITIAL .)
+    STEP            reduce using rule 19 (modifier -> INITIAL .)
+    HOT             reduce using rule 19 (modifier -> INITIAL .)
+    INITIAL         reduce using rule 19 (modifier -> INITIAL .)
+    NAME            shift and go to state 42
+    DONE            shift and go to state 44
+    ERROR           shift and go to state 45
+
+
+    action                         shift and go to state 46
+    actions                        shift and go to state 43
+
+state 37
+
+    (9) automaton -> AUTOMATON NAME { states initial . forbidden success }
+    (70) forbidden -> .
+    (71) forbidden -> . HOT names
+
+    SUCCESS         reduce using rule 70 (forbidden -> .)
+    }               reduce using rule 70 (forbidden -> .)
+    HOT             shift and go to state 48
+
+
+    forbidden                      shift and go to state 47
+
+state 38
+
+    (12) states -> states state .
+
+    INITIAL         reduce using rule 12 (states -> states state .)
+    HOT             reduce using rule 12 (states -> states state .)
+    SUCCESS         reduce using rule 12 (states -> states state .)
+    }               reduce using rule 12 (states -> states state .)
+    ALWAYS          reduce using rule 12 (states -> states state .)
+    STATE           reduce using rule 12 (states -> states state .)
+    STEP            reduce using rule 12 (states -> states state .)
+
+
+
+state 39
+
+    (29) event -> type { . constraints }
+    (30) event -> type { . constraints } WHERE predicate
+    (36) constraints -> .
+    (37) constraints -> . constraint
+    (38) constraints -> . constraints , constraint
+    (39) constraint -> . NAME : range
+
+    }               reduce using rule 36 (constraints -> .)
+    ,               reduce using rule 36 (constraints -> .)
+    NAME            shift and go to state 49
+
+
+    constraint                     shift and go to state 50
+    constraints                    shift and go to state 51
+
+state 40
+
+    (76) pattern -> PATTERN NAME : event TRANS . consequence
+    (77) consequence -> . event
+    (78) consequence -> . ! event
+    (79) consequence -> . [ consequencelist ]
+    (80) consequence -> . { consequencelist }
+    (29) event -> . type { constraints }
+    (30) event -> . type { constraints } WHERE predicate
+    (31) type -> . COMMAND
+    (32) type -> . EVR
+    (33) type -> . CHANNEL
+    (34) type -> . CHANGE
+    (35) type -> . PRODUCT
+
+    !               shift and go to state 52
+    [               shift and go to state 55
+    {               shift and go to state 54
+    COMMAND         shift and go to state 25
+    EVR             shift and go to state 27
+    CHANNEL         shift and go to state 30
+    CHANGE          shift and go to state 26
+    PRODUCT         shift and go to state 24
+
+
+    consequence                    shift and go to state 53
+    type                           shift and go to state 28
+    event                          shift and go to state 56
+
+state 41
+
+    (13) state -> modifiers statekind NAME . { rules }
+    (14) state -> modifiers statekind NAME . ( formals ) { rules }
+
+    {               shift and go to state 58
+    (               shift and go to state 57
+
+
+
+state 42
+
+    (59) action -> NAME .
+    (60) action -> NAME . ( arguments )
+
+    ,               reduce using rule 59 (action -> NAME .)
+    }               reduce using rule 59 (action -> NAME .)
+    COMMAND         reduce using rule 59 (action -> NAME .)
+    EVR             reduce using rule 59 (action -> NAME .)
+    CHANNEL         reduce using rule 59 (action -> NAME .)
+    CHANGE          reduce using rule 59 (action -> NAME .)
+    PRODUCT         reduce using rule 59 (action -> NAME .)
+    HOT             reduce using rule 59 (action -> NAME .)
+    SUCCESS         reduce using rule 59 (action -> NAME .)
+    (               shift and go to state 59
+
+
+
+state 43
+
+    (69) initial -> INITIAL actions .
+    (58) actions -> actions . , action
+
+    HOT             reduce using rule 69 (initial -> INITIAL actions .)
+    SUCCESS         reduce using rule 69 (initial -> INITIAL actions .)
+    }               reduce using rule 69 (initial -> INITIAL actions .)
+    ,               shift and go to state 60
+
+
+
+state 44
+
+    (61) action -> DONE .
+
+    ,               reduce using rule 61 (action -> DONE .)
+    }               reduce using rule 61 (action -> DONE .)
+    COMMAND         reduce using rule 61 (action -> DONE .)
+    EVR             reduce using rule 61 (action -> DONE .)
+    CHANNEL         reduce using rule 61 (action -> DONE .)
+    CHANGE          reduce using rule 61 (action -> DONE .)
+    PRODUCT         reduce using rule 61 (action -> DONE .)
+    HOT             reduce using rule 61 (action -> DONE .)
+    SUCCESS         reduce using rule 61 (action -> DONE .)
+
+
+
+state 45
+
+    (62) action -> ERROR .
+
+    ,               reduce using rule 62 (action -> ERROR .)
+    }               reduce using rule 62 (action -> ERROR .)
+    COMMAND         reduce using rule 62 (action -> ERROR .)
+    EVR             reduce using rule 62 (action -> ERROR .)
+    CHANNEL         reduce using rule 62 (action -> ERROR .)
+    CHANGE          reduce using rule 62 (action -> ERROR .)
+    PRODUCT         reduce using rule 62 (action -> ERROR .)
+    HOT             reduce using rule 62 (action -> ERROR .)
+    SUCCESS         reduce using rule 62 (action -> ERROR .)
+
+
+
+state 46
+
+    (57) actions -> action .
+
+    ,               reduce using rule 57 (actions -> action .)
+    HOT             reduce using rule 57 (actions -> action .)
+    SUCCESS         reduce using rule 57 (actions -> action .)
+    }               reduce using rule 57 (actions -> action .)
+    COMMAND         reduce using rule 57 (actions -> action .)
+    EVR             reduce using rule 57 (actions -> action .)
+    CHANNEL         reduce using rule 57 (actions -> action .)
+    CHANGE          reduce using rule 57 (actions -> action .)
+    PRODUCT         reduce using rule 57 (actions -> action .)
+
+
+
+state 47
+
+    (9) automaton -> AUTOMATON NAME { states initial forbidden . success }
+    (74) success -> .
+    (75) success -> . SUCCESS names
+
+    }               reduce using rule 74 (success -> .)
+    SUCCESS         shift and go to state 62
+
+
+    success                        shift and go to state 61
+
+state 48
+
+    (71) forbidden -> HOT . names
+    (72) names -> . NAME
+    (73) names -> . names , NAME
+
+    NAME            shift and go to state 64
+
+
+    names                          shift and go to state 63
+
+state 49
+
+    (39) constraint -> NAME . : range
+
+    :               shift and go to state 65
+
+
+
+state 50
+
+    (37) constraints -> constraint .
+
+    }               reduce using rule 37 (constraints -> constraint .)
+    ,               reduce using rule 37 (constraints -> constraint .)
+
+
+
+state 51
+
+    (29) event -> type { constraints . }
+    (30) event -> type { constraints . } WHERE predicate
+    (38) constraints -> constraints . , constraint
+
+    }               shift and go to state 66
+    ,               shift and go to state 67
+
+
+
+state 52
+
+    (78) consequence -> ! . event
+    (29) event -> . type { constraints }
+    (30) event -> . type { constraints } WHERE predicate
+    (31) type -> . COMMAND
+    (32) type -> . EVR
+    (33) type -> . CHANNEL
+    (34) type -> . CHANGE
+    (35) type -> . PRODUCT
+
+    COMMAND         shift and go to state 25
+    EVR             shift and go to state 27
+    CHANNEL         shift and go to state 30
+    CHANGE          shift and go to state 26
+    PRODUCT         shift and go to state 24
+
+
+    type                           shift and go to state 28
+    event                          shift and go to state 68
+
+state 53
+
+    (76) pattern -> PATTERN NAME : event TRANS consequence .
+
+    IGNORE          reduce using rule 76 (pattern -> PATTERN NAME : event TRANS consequence .)
+    AUTOMATON       reduce using rule 76 (pattern -> PATTERN NAME : event TRANS consequence .)
+    PATTERN         reduce using rule 76 (pattern -> PATTERN NAME : event TRANS consequence .)
+    $end            reduce using rule 76 (pattern -> PATTERN NAME : event TRANS consequence .)
+
+
+
+state 54
+
+    (80) consequence -> { . consequencelist }
+    (81) consequencelist -> . consequence
+    (82) consequencelist -> . consequencelist , consequence
+    (77) consequence -> . event
+    (78) consequence -> . ! event
+    (79) consequence -> . [ consequencelist ]
+    (80) consequence -> . { consequencelist }
+    (29) event -> . type { constraints }
+    (30) event -> . type { constraints } WHERE predicate
+    (31) type -> . COMMAND
+    (32) type -> . EVR
+    (33) type -> . CHANNEL
+    (34) type -> . CHANGE
+    (35) type -> . PRODUCT
+
+    !               shift and go to state 52
+    [               shift and go to state 55
+    {               shift and go to state 54
+    COMMAND         shift and go to state 25
+    EVR             shift and go to state 27
+    CHANNEL         shift and go to state 30
+    CHANGE          shift and go to state 26
+    PRODUCT         shift and go to state 24
+
+
+    consequencelist                shift and go to state 69
+    consequence                    shift and go to state 70
+    type                           shift and go to state 28
+    event                          shift and go to state 56
+
+state 55
+
+    (79) consequence -> [ . consequencelist ]
+    (81) consequencelist -> . consequence
+    (82) consequencelist -> . consequencelist , consequence
+    (77) consequence -> . event
+    (78) consequence -> . ! event
+    (79) consequence -> . [ consequencelist ]
+    (80) consequence -> . { consequencelist }
+    (29) event -> . type { constraints }
+    (30) event -> . type { constraints } WHERE predicate
+    (31) type -> . COMMAND
+    (32) type -> . EVR
+    (33) type -> . CHANNEL
+    (34) type -> . CHANGE
+    (35) type -> . PRODUCT
+
+    !               shift and go to state 52
+    [               shift and go to state 55
+    {               shift and go to state 54
+    COMMAND         shift and go to state 25
+    EVR             shift and go to state 27
+    CHANNEL         shift and go to state 30
+    CHANGE          shift and go to state 26
+    PRODUCT         shift and go to state 24
+
+
+    consequencelist                shift and go to state 71
+    consequence                    shift and go to state 70
+    type                           shift and go to state 28
+    event                          shift and go to state 56
+
+state 56
+
+    (77) consequence -> event .
+
+    }               reduce using rule 77 (consequence -> event .)
+    ,               reduce using rule 77 (consequence -> event .)
+    ]               reduce using rule 77 (consequence -> event .)
+    IGNORE          reduce using rule 77 (consequence -> event .)
+    AUTOMATON       reduce using rule 77 (consequence -> event .)
+    PATTERN         reduce using rule 77 (consequence -> event .)
+    $end            reduce using rule 77 (consequence -> event .)
+
+
+
+state 57
+
+    (14) state -> modifiers statekind NAME ( . formals ) { rules }
+    (20) formals -> . names
+    (72) names -> . NAME
+    (73) names -> . names , NAME
+
+    NAME            shift and go to state 64
+
+
+    names                          shift and go to state 72
+    formals                        shift and go to state 73
+
+state 58
+
+    (13) state -> modifiers statekind NAME { . rules }
+    (24) rules -> .
+    (25) rules -> . rule
+    (26) rules -> . rules rule
+    (27) rule -> . conditions TRANS actions
+    (28) conditions -> . event
+    (29) event -> . type { constraints }
+    (30) event -> . type { constraints } WHERE predicate
+    (31) type -> . COMMAND
+    (32) type -> . EVR
+    (33) type -> . CHANNEL
+    (34) type -> . CHANGE
+    (35) type -> . PRODUCT
+
+  ! shift/reduce conflict for COMMAND resolved as shift.
+  ! shift/reduce conflict for EVR resolved as shift.
+  ! shift/reduce conflict for CHANNEL resolved as shift.
+  ! shift/reduce conflict for CHANGE resolved as shift.
+  ! shift/reduce conflict for PRODUCT resolved as shift.
+    }               reduce using rule 24 (rules -> .)
+    COMMAND         shift and go to state 25
+    EVR             shift and go to state 27
+    CHANNEL         shift and go to state 30
+    CHANGE          shift and go to state 26
+    PRODUCT         shift and go to state 24
+
+  ! COMMAND         [ reduce using rule 24 (rules -> .) ]
+  ! EVR             [ reduce using rule 24 (rules -> .) ]
+  ! CHANNEL         [ reduce using rule 24 (rules -> .) ]
+  ! CHANGE          [ reduce using rule 24 (rules -> .) ]
+  ! PRODUCT         [ reduce using rule 24 (rules -> .) ]
+
+    rules                          shift and go to state 74
+    type                           shift and go to state 28
+    rule                           shift and go to state 76
+    conditions                     shift and go to state 75
+    event                          shift and go to state 77
+
+state 59
+
+    (60) action -> NAME ( . arguments )
+    (63) arguments -> . argument
+    (64) arguments -> . arguments , argument
+    (65) argument -> . NUMBER
+    (66) argument -> . STRING
+    (67) argument -> . NAME
+
+    NUMBER          shift and go to state 80
+    STRING          shift and go to state 82
+    NAME            shift and go to state 78
+
+
+    arguments                      shift and go to state 81
+    argument                       shift and go to state 79
+
+state 60
+
+    (58) actions -> actions , . action
+    (59) action -> . NAME
+    (60) action -> . NAME ( arguments )
+    (61) action -> . DONE
+    (62) action -> . ERROR
+
+    NAME            shift and go to state 42
+    DONE            shift and go to state 44
+    ERROR           shift and go to state 45
+
+
+    action                         shift and go to state 83
+
+state 61
+
+    (9) automaton -> AUTOMATON NAME { states initial forbidden success . }
+
+    }               shift and go to state 84
+
+
+
+state 62
+
+    (75) success -> SUCCESS . names
+    (72) names -> . NAME
+    (73) names -> . names , NAME
+
+    NAME            shift and go to state 64
+
+
+    names                          shift and go to state 85
+
+state 63
+
+    (71) forbidden -> HOT names .
+    (73) names -> names . , NAME
+
+    SUCCESS         reduce using rule 71 (forbidden -> HOT names .)
+    }               reduce using rule 71 (forbidden -> HOT names .)
+    ,               shift and go to state 86
+
+
+
+state 64
+
+    (72) names -> NAME .
+
+    ,               reduce using rule 72 (names -> NAME .)
+    )               reduce using rule 72 (names -> NAME .)
+    }               reduce using rule 72 (names -> NAME .)
+    SUCCESS         reduce using rule 72 (names -> NAME .)
+
+
+
+state 65
+
+    (39) constraint -> NAME : . range
+    (40) range -> . NUMBER
+    (41) range -> . STRING
+    (42) range -> . [ NUMBER , NUMBER ]
+    (43) range -> . { bitvalues }
+    (44) range -> . NAME
+
+    NUMBER          shift and go to state 88
+    STRING          shift and go to state 87
+    [               shift and go to state 90
+    {               shift and go to state 91
+    NAME            shift and go to state 92
+
+
+    range                          shift and go to state 89
+
+state 66
+
+    (29) event -> type { constraints } .
+    (30) event -> type { constraints } . WHERE predicate
+
+    IGNORE          reduce using rule 29 (event -> type { constraints } .)
+    AUTOMATON       reduce using rule 29 (event -> type { constraints } .)
+    PATTERN         reduce using rule 29 (event -> type { constraints } .)
+    $end            reduce using rule 29 (event -> type { constraints } .)
+    }               reduce using rule 29 (event -> type { constraints } .)
+    ,               reduce using rule 29 (event -> type { constraints } .)
+    ]               reduce using rule 29 (event -> type { constraints } .)
+    TRANS           reduce using rule 29 (event -> type { constraints } .)
+    WHERE           shift and go to state 93
+
+
+
+state 67
+
+    (38) constraints -> constraints , . constraint
+    (39) constraint -> . NAME : range
+
+    NAME            shift and go to state 49
+
+
+    constraint                     shift and go to state 94
+
+state 68
+
+    (78) consequence -> ! event .
+
+    }               reduce using rule 78 (consequence -> ! event .)
+    ,               reduce using rule 78 (consequence -> ! event .)
+    ]               reduce using rule 78 (consequence -> ! event .)
+    IGNORE          reduce using rule 78 (consequence -> ! event .)
+    AUTOMATON       reduce using rule 78 (consequence -> ! event .)
+    PATTERN         reduce using rule 78 (consequence -> ! event .)
+    $end            reduce using rule 78 (consequence -> ! event .)
+
+
+
+state 69
+
+    (80) consequence -> { consequencelist . }
+    (82) consequencelist -> consequencelist . , consequence
+
+    }               shift and go to state 95
+    ,               shift and go to state 96
+
+
+
+state 70
+
+    (81) consequencelist -> consequence .
+
+    }               reduce using rule 81 (consequencelist -> consequence .)
+    ,               reduce using rule 81 (consequencelist -> consequence .)
+    ]               reduce using rule 81 (consequencelist -> consequence .)
+
+
+
+state 71
+
+    (79) consequence -> [ consequencelist . ]
+    (82) consequencelist -> consequencelist . , consequence
+
+    ]               shift and go to state 97
+    ,               shift and go to state 96
+
+
+
+state 72
+
+    (20) formals -> names .
+    (73) names -> names . , NAME
+
+    )               reduce using rule 20 (formals -> names .)
+    ,               shift and go to state 86
+
+
+
+state 73
+
+    (14) state -> modifiers statekind NAME ( formals . ) { rules }
+
+    )               shift and go to state 98
+
+
+
+state 74
+
+    (13) state -> modifiers statekind NAME { rules . }
+    (26) rules -> rules . rule
+    (27) rule -> . conditions TRANS actions
+    (28) conditions -> . event
+    (29) event -> . type { constraints }
+    (30) event -> . type { constraints } WHERE predicate
+    (31) type -> . COMMAND
+    (32) type -> . EVR
+    (33) type -> . CHANNEL
+    (34) type -> . CHANGE
+    (35) type -> . PRODUCT
+
+    }               shift and go to state 100
+    COMMAND         shift and go to state 25
+    EVR             shift and go to state 27
+    CHANNEL         shift and go to state 30
+    CHANGE          shift and go to state 26
+    PRODUCT         shift and go to state 24
+
+
+    type                           shift and go to state 28
+    rule                           shift and go to state 99
+    conditions                     shift and go to state 75
+    event                          shift and go to state 77
+
+state 75
+
+    (27) rule -> conditions . TRANS actions
+
+    TRANS           shift and go to state 101
+
+
+
+state 76
+
+    (25) rules -> rule .
+
+    }               reduce using rule 25 (rules -> rule .)
+    COMMAND         reduce using rule 25 (rules -> rule .)
+    EVR             reduce using rule 25 (rules -> rule .)
+    CHANNEL         reduce using rule 25 (rules -> rule .)
+    CHANGE          reduce using rule 25 (rules -> rule .)
+    PRODUCT         reduce using rule 25 (rules -> rule .)
+
+
+
+state 77
+
+    (28) conditions -> event .
+
+    TRANS           reduce using rule 28 (conditions -> event .)
+
+
+
+state 78
+
+    (67) argument -> NAME .
+
+    )               reduce using rule 67 (argument -> NAME .)
+    ,               reduce using rule 67 (argument -> NAME .)
+
+
+
+state 79
+
+    (63) arguments -> argument .
+
+    )               reduce using rule 63 (arguments -> argument .)
+    ,               reduce using rule 63 (arguments -> argument .)
+
+
+
+state 80
+
+    (65) argument -> NUMBER .
+
+    )               reduce using rule 65 (argument -> NUMBER .)
+    ,               reduce using rule 65 (argument -> NUMBER .)
+
+
+
+state 81
+
+    (60) action -> NAME ( arguments . )
+    (64) arguments -> arguments . , argument
+
+    )               shift and go to state 102
+    ,               shift and go to state 103
+
+
+
+state 82
+
+    (66) argument -> STRING .
+
+    )               reduce using rule 66 (argument -> STRING .)
+    ,               reduce using rule 66 (argument -> STRING .)
+
+
+
+state 83
+
+    (58) actions -> actions , action .
+
+    ,               reduce using rule 58 (actions -> actions , action .)
+    HOT             reduce using rule 58 (actions -> actions , action .)
+    SUCCESS         reduce using rule 58 (actions -> actions , action .)
+    }               reduce using rule 58 (actions -> actions , action .)
+    COMMAND         reduce using rule 58 (actions -> actions , action .)
+    EVR             reduce using rule 58 (actions -> actions , action .)
+    CHANNEL         reduce using rule 58 (actions -> actions , action .)
+    CHANGE          reduce using rule 58 (actions -> actions , action .)
+    PRODUCT         reduce using rule 58 (actions -> actions , action .)
+
+
+
+state 84
+
+    (9) automaton -> AUTOMATON NAME { states initial forbidden success } .
+
+    IGNORE          reduce using rule 9 (automaton -> AUTOMATON NAME { states initial forbidden success } .)
+    AUTOMATON       reduce using rule 9 (automaton -> AUTOMATON NAME { states initial forbidden success } .)
+    PATTERN         reduce using rule 9 (automaton -> AUTOMATON NAME { states initial forbidden success } .)
+    $end            reduce using rule 9 (automaton -> AUTOMATON NAME { states initial forbidden success } .)
+
+
+
+state 85
+
+    (75) success -> SUCCESS names .
+    (73) names -> names . , NAME
+
+    }               reduce using rule 75 (success -> SUCCESS names .)
+    ,               shift and go to state 86
+
+
+
+state 86
+
+    (73) names -> names , . NAME
+
+    NAME            shift and go to state 104
+
+
+
+state 87
+
+    (41) range -> STRING .
+
+    }               reduce using rule 41 (range -> STRING .)
+    ,               reduce using rule 41 (range -> STRING .)
+
+
+
+state 88
+
+    (40) range -> NUMBER .
+
+    }               reduce using rule 40 (range -> NUMBER .)
+    ,               reduce using rule 40 (range -> NUMBER .)
+
+
+
+state 89
+
+    (39) constraint -> NAME : range .
+
+    }               reduce using rule 39 (constraint -> NAME : range .)
+    ,               reduce using rule 39 (constraint -> NAME : range .)
+
+
+
+state 90
+
+    (42) range -> [ . NUMBER , NUMBER ]
+
+    NUMBER          shift and go to state 105
+
+
+
+state 91
+
+    (43) range -> { . bitvalues }
+    (45) bitvalues -> .
+    (46) bitvalues -> . bitvalue
+    (47) bitvalues -> . bitvalues , bitvalue
+    (48) bitvalue -> . value : range
+    (49) value -> . NUMBER
+    (50) value -> . STRING
+
+    }               reduce using rule 45 (bitvalues -> .)
+    ,               reduce using rule 45 (bitvalues -> .)
+    NUMBER          shift and go to state 108
+    STRING          shift and go to state 106
+
+
+    bitvalue                       shift and go to state 109
+    bitvalues                      shift and go to state 110
+    value                          shift and go to state 107
+
+state 92
+
+    (44) range -> NAME .
+
+    }               reduce using rule 44 (range -> NAME .)
+    ,               reduce using rule 44 (range -> NAME .)
+
+
+
+state 93
+
+    (30) event -> type { constraints } WHERE . predicate
+    (51) predicate -> . NAME ( arguments )
+    (52) predicate -> . EXPRESSION
+    (53) predicate -> . predicate AND predicate
+    (54) predicate -> . predicate OR predicate
+    (55) predicate -> . NOT predicate
+    (56) predicate -> . ( predicate )
+
+    NAME            shift and go to state 112
+    EXPRESSION      shift and go to state 113
+    NOT             shift and go to state 115
+    (               shift and go to state 114
+
+
+    predicate                      shift and go to state 111
+
+state 94
+
+    (38) constraints -> constraints , constraint .
+
+    }               reduce using rule 38 (constraints -> constraints , constraint .)
+    ,               reduce using rule 38 (constraints -> constraints , constraint .)
+
+
+
+state 95
+
+    (80) consequence -> { consequencelist } .
+
+    }               reduce using rule 80 (consequence -> { consequencelist } .)
+    ,               reduce using rule 80 (consequence -> { consequencelist } .)
+    ]               reduce using rule 80 (consequence -> { consequencelist } .)
+    IGNORE          reduce using rule 80 (consequence -> { consequencelist } .)
+    AUTOMATON       reduce using rule 80 (consequence -> { consequencelist } .)
+    PATTERN         reduce using rule 80 (consequence -> { consequencelist } .)
+    $end            reduce using rule 80 (consequence -> { consequencelist } .)
+
+
+
+state 96
+
+    (82) consequencelist -> consequencelist , . consequence
+    (77) consequence -> . event
+    (78) consequence -> . ! event
+    (79) consequence -> . [ consequencelist ]
+    (80) consequence -> . { consequencelist }
+    (29) event -> . type { constraints }
+    (30) event -> . type { constraints } WHERE predicate
+    (31) type -> . COMMAND
+    (32) type -> . EVR
+    (33) type -> . CHANNEL
+    (34) type -> . CHANGE
+    (35) type -> . PRODUCT
+
+    !               shift and go to state 52
+    [               shift and go to state 55
+    {               shift and go to state 54
+    COMMAND         shift and go to state 25
+    EVR             shift and go to state 27
+    CHANNEL         shift and go to state 30
+    CHANGE          shift and go to state 26
+    PRODUCT         shift and go to state 24
+
+
+    consequence                    shift and go to state 116
+    type                           shift and go to state 28
+    event                          shift and go to state 56
+
+state 97
+
+    (79) consequence -> [ consequencelist ] .
+
+    }               reduce using rule 79 (consequence -> [ consequencelist ] .)
+    ,               reduce using rule 79 (consequence -> [ consequencelist ] .)
+    ]               reduce using rule 79 (consequence -> [ consequencelist ] .)
+    IGNORE          reduce using rule 79 (consequence -> [ consequencelist ] .)
+    AUTOMATON       reduce using rule 79 (consequence -> [ consequencelist ] .)
+    PATTERN         reduce using rule 79 (consequence -> [ consequencelist ] .)
+    $end            reduce using rule 79 (consequence -> [ consequencelist ] .)
+
+
+
+state 98
+
+    (14) state -> modifiers statekind NAME ( formals ) . { rules }
+
+    {               shift and go to state 117
+
+
+
+state 99
+
+    (26) rules -> rules rule .
+
+    }               reduce using rule 26 (rules -> rules rule .)
+    COMMAND         reduce using rule 26 (rules -> rules rule .)
+    EVR             reduce using rule 26 (rules -> rules rule .)
+    CHANNEL         reduce using rule 26 (rules -> rules rule .)
+    CHANGE          reduce using rule 26 (rules -> rules rule .)
+    PRODUCT         reduce using rule 26 (rules -> rules rule .)
+
+
+
+state 100
+
+    (13) state -> modifiers statekind NAME { rules } .
+
+    INITIAL         reduce using rule 13 (state -> modifiers statekind NAME { rules } .)
+    HOT             reduce using rule 13 (state -> modifiers statekind NAME { rules } .)
+    SUCCESS         reduce using rule 13 (state -> modifiers statekind NAME { rules } .)
+    }               reduce using rule 13 (state -> modifiers statekind NAME { rules } .)
+    ALWAYS          reduce using rule 13 (state -> modifiers statekind NAME { rules } .)
+    STATE           reduce using rule 13 (state -> modifiers statekind NAME { rules } .)
+    STEP            reduce using rule 13 (state -> modifiers statekind NAME { rules } .)
+
+
+
+state 101
+
+    (27) rule -> conditions TRANS . actions
+    (57) actions -> . action
+    (58) actions -> . actions , action
+    (59) action -> . NAME
+    (60) action -> . NAME ( arguments )
+    (61) action -> . DONE
+    (62) action -> . ERROR
+
+    NAME            shift and go to state 42
+    DONE            shift and go to state 44
+    ERROR           shift and go to state 45
+
+
+    action                         shift and go to state 46
+    actions                        shift and go to state 118
+
+state 102
+
+    (60) action -> NAME ( arguments ) .
+
+    ,               reduce using rule 60 (action -> NAME ( arguments ) .)
+    }               reduce using rule 60 (action -> NAME ( arguments ) .)
+    COMMAND         reduce using rule 60 (action -> NAME ( arguments ) .)
+    EVR             reduce using rule 60 (action -> NAME ( arguments ) .)
+    CHANNEL         reduce using rule 60 (action -> NAME ( arguments ) .)
+    CHANGE          reduce using rule 60 (action -> NAME ( arguments ) .)
+    PRODUCT         reduce using rule 60 (action -> NAME ( arguments ) .)
+    HOT             reduce using rule 60 (action -> NAME ( arguments ) .)
+    SUCCESS         reduce using rule 60 (action -> NAME ( arguments ) .)
+
+
+
+state 103
+
+    (64) arguments -> arguments , . argument
+    (65) argument -> . NUMBER
+    (66) argument -> . STRING
+    (67) argument -> . NAME
+
+    NUMBER          shift and go to state 80
+    STRING          shift and go to state 82
+    NAME            shift and go to state 78
+
+
+    argument                       shift and go to state 119
+
+state 104
+
+    (73) names -> names , NAME .
+
+    ,               reduce using rule 73 (names -> names , NAME .)
+    )               reduce using rule 73 (names -> names , NAME .)
+    }               reduce using rule 73 (names -> names , NAME .)
+    SUCCESS         reduce using rule 73 (names -> names , NAME .)
+
+
+
+state 105
+
+    (42) range -> [ NUMBER . , NUMBER ]
+
+    ,               shift and go to state 120
+
+
+
+state 106
+
+    (50) value -> STRING .
+
+    :               reduce using rule 50 (value -> STRING .)
+
+
+
+state 107
+
+    (48) bitvalue -> value . : range
+
+    :               shift and go to state 121
+
+
+
+state 108
+
+    (49) value -> NUMBER .
+
+    :               reduce using rule 49 (value -> NUMBER .)
+
+
+
+state 109
+
+    (46) bitvalues -> bitvalue .
+
+    }               reduce using rule 46 (bitvalues -> bitvalue .)
+    ,               reduce using rule 46 (bitvalues -> bitvalue .)
+
+
+
+state 110
+
+    (43) range -> { bitvalues . }
+    (47) bitvalues -> bitvalues . , bitvalue
+
+    }               shift and go to state 122
+    ,               shift and go to state 123
+
+
+
+state 111
+
+    (30) event -> type { constraints } WHERE predicate .
+    (53) predicate -> predicate . AND predicate
+    (54) predicate -> predicate . OR predicate
+
+    IGNORE          reduce using rule 30 (event -> type { constraints } WHERE predicate .)
+    AUTOMATON       reduce using rule 30 (event -> type { constraints } WHERE predicate .)
+    PATTERN         reduce using rule 30 (event -> type { constraints } WHERE predicate .)
+    $end            reduce using rule 30 (event -> type { constraints } WHERE predicate .)
+    }               reduce using rule 30 (event -> type { constraints } WHERE predicate .)
+    ,               reduce using rule 30 (event -> type { constraints } WHERE predicate .)
+    ]               reduce using rule 30 (event -> type { constraints } WHERE predicate .)
+    TRANS           reduce using rule 30 (event -> type { constraints } WHERE predicate .)
+    AND             shift and go to state 124
+    OR              shift and go to state 125
+
+
+
+state 112
+
+    (51) predicate -> NAME . ( arguments )
+
+    (               shift and go to state 126
+
+
+
+state 113
+
+    (52) predicate -> EXPRESSION .
+
+    AND             reduce using rule 52 (predicate -> EXPRESSION .)
+    OR              reduce using rule 52 (predicate -> EXPRESSION .)
+    TRANS           reduce using rule 52 (predicate -> EXPRESSION .)
+    IGNORE          reduce using rule 52 (predicate -> EXPRESSION .)
+    AUTOMATON       reduce using rule 52 (predicate -> EXPRESSION .)
+    PATTERN         reduce using rule 52 (predicate -> EXPRESSION .)
+    $end            reduce using rule 52 (predicate -> EXPRESSION .)
+    }               reduce using rule 52 (predicate -> EXPRESSION .)
+    ,               reduce using rule 52 (predicate -> EXPRESSION .)
+    ]               reduce using rule 52 (predicate -> EXPRESSION .)
+    )               reduce using rule 52 (predicate -> EXPRESSION .)
+
+
+
+state 114
+
+    (56) predicate -> ( . predicate )
+    (51) predicate -> . NAME ( arguments )
+    (52) predicate -> . EXPRESSION
+    (53) predicate -> . predicate AND predicate
+    (54) predicate -> . predicate OR predicate
+    (55) predicate -> . NOT predicate
+    (56) predicate -> . ( predicate )
+
+    NAME            shift and go to state 112
+    EXPRESSION      shift and go to state 113
+    NOT             shift and go to state 115
+    (               shift and go to state 114
+
+
+    predicate                      shift and go to state 127
+
+state 115
+
+    (55) predicate -> NOT . predicate
+    (51) predicate -> . NAME ( arguments )
+    (52) predicate -> . EXPRESSION
+    (53) predicate -> . predicate AND predicate
+    (54) predicate -> . predicate OR predicate
+    (55) predicate -> . NOT predicate
+    (56) predicate -> . ( predicate )
+
+    NAME            shift and go to state 112
+    EXPRESSION      shift and go to state 113
+    NOT             shift and go to state 115
+    (               shift and go to state 114
+
+
+    predicate                      shift and go to state 128
+
+state 116
+
+    (82) consequencelist -> consequencelist , consequence .
+
+    }               reduce using rule 82 (consequencelist -> consequencelist , consequence .)
+    ,               reduce using rule 82 (consequencelist -> consequencelist , consequence .)
+    ]               reduce using rule 82 (consequencelist -> consequencelist , consequence .)
+
+
+
+state 117
+
+    (14) state -> modifiers statekind NAME ( formals ) { . rules }
+    (24) rules -> .
+    (25) rules -> . rule
+    (26) rules -> . rules rule
+    (27) rule -> . conditions TRANS actions
+    (28) conditions -> . event
+    (29) event -> . type { constraints }
+    (30) event -> . type { constraints } WHERE predicate
+    (31) type -> . COMMAND
+    (32) type -> . EVR
+    (33) type -> . CHANNEL
+    (34) type -> . CHANGE
+    (35) type -> . PRODUCT
+
+  ! shift/reduce conflict for COMMAND resolved as shift.
+  ! shift/reduce conflict for EVR resolved as shift.
+  ! shift/reduce conflict for CHANNEL resolved as shift.
+  ! shift/reduce conflict for CHANGE resolved as shift.
+  ! shift/reduce conflict for PRODUCT resolved as shift.
+    }               reduce using rule 24 (rules -> .)
+    COMMAND         shift and go to state 25
+    EVR             shift and go to state 27
+    CHANNEL         shift and go to state 30
+    CHANGE          shift and go to state 26
+    PRODUCT         shift and go to state 24
+
+  ! COMMAND         [ reduce using rule 24 (rules -> .) ]
+  ! EVR             [ reduce using rule 24 (rules -> .) ]
+  ! CHANNEL         [ reduce using rule 24 (rules -> .) ]
+  ! CHANGE          [ reduce using rule 24 (rules -> .) ]
+  ! PRODUCT         [ reduce using rule 24 (rules -> .) ]
+
+    rules                          shift and go to state 129
+    type                           shift and go to state 28
+    rule                           shift and go to state 76
+    conditions                     shift and go to state 75
+    event                          shift and go to state 77
+
+state 118
+
+    (27) rule -> conditions TRANS actions .
+    (58) actions -> actions . , action
+
+    }               reduce using rule 27 (rule -> conditions TRANS actions .)
+    COMMAND         reduce using rule 27 (rule -> conditions TRANS actions .)
+    EVR             reduce using rule 27 (rule -> conditions TRANS actions .)
+    CHANNEL         reduce using rule 27 (rule -> conditions TRANS actions .)
+    CHANGE          reduce using rule 27 (rule -> conditions TRANS actions .)
+    PRODUCT         reduce using rule 27 (rule -> conditions TRANS actions .)
+    ,               shift and go to state 60
+
+
+
+state 119
+
+    (64) arguments -> arguments , argument .
+
+    )               reduce using rule 64 (arguments -> arguments , argument .)
+    ,               reduce using rule 64 (arguments -> arguments , argument .)
+
+
+
+state 120
+
+    (42) range -> [ NUMBER , . NUMBER ]
+
+    NUMBER          shift and go to state 130
+
+
+
+state 121
+
+    (48) bitvalue -> value : . range
+    (40) range -> . NUMBER
+    (41) range -> . STRING
+    (42) range -> . [ NUMBER , NUMBER ]
+    (43) range -> . { bitvalues }
+    (44) range -> . NAME
+
+    NUMBER          shift and go to state 88
+    STRING          shift and go to state 87
+    [               shift and go to state 90
+    {               shift and go to state 91
+    NAME            shift and go to state 92
+
+
+    range                          shift and go to state 131
+
+state 122
+
+    (43) range -> { bitvalues } .
+
+    }               reduce using rule 43 (range -> { bitvalues } .)
+    ,               reduce using rule 43 (range -> { bitvalues } .)
+
+
+
+state 123
+
+    (47) bitvalues -> bitvalues , . bitvalue
+    (48) bitvalue -> . value : range
+    (49) value -> . NUMBER
+    (50) value -> . STRING
+
+    NUMBER          shift and go to state 108
+    STRING          shift and go to state 106
+
+
+    bitvalue                       shift and go to state 132
+    value                          shift and go to state 107
+
+state 124
+
+    (53) predicate -> predicate AND . predicate
+    (51) predicate -> . NAME ( arguments )
+    (52) predicate -> . EXPRESSION
+    (53) predicate -> . predicate AND predicate
+    (54) predicate -> . predicate OR predicate
+    (55) predicate -> . NOT predicate
+    (56) predicate -> . ( predicate )
+
+    NAME            shift and go to state 112
+    EXPRESSION      shift and go to state 113
+    NOT             shift and go to state 115
+    (               shift and go to state 114
+
+
+    predicate                      shift and go to state 133
+
+state 125
+
+    (54) predicate -> predicate OR . predicate
+    (51) predicate -> . NAME ( arguments )
+    (52) predicate -> . EXPRESSION
+    (53) predicate -> . predicate AND predicate
+    (54) predicate -> . predicate OR predicate
+    (55) predicate -> . NOT predicate
+    (56) predicate -> . ( predicate )
+
+    NAME            shift and go to state 112
+    EXPRESSION      shift and go to state 113
+    NOT             shift and go to state 115
+    (               shift and go to state 114
+
+
+    predicate                      shift and go to state 134
+
+state 126
+
+    (51) predicate -> NAME ( . arguments )
+    (63) arguments -> . argument
+    (64) arguments -> . arguments , argument
+    (65) argument -> . NUMBER
+    (66) argument -> . STRING
+    (67) argument -> . NAME
+
+    NUMBER          shift and go to state 80
+    STRING          shift and go to state 82
+    NAME            shift and go to state 78
+
+
+    arguments                      shift and go to state 135
+    argument                       shift and go to state 79
+
+state 127
+
+    (56) predicate -> ( predicate . )
+    (53) predicate -> predicate . AND predicate
+    (54) predicate -> predicate . OR predicate
+
+    )               shift and go to state 136
+    AND             shift and go to state 124
+    OR              shift and go to state 125
+
+
+
+state 128
+
+    (55) predicate -> NOT predicate .
+    (53) predicate -> predicate . AND predicate
+    (54) predicate -> predicate . OR predicate
+
+    AND             reduce using rule 55 (predicate -> NOT predicate .)
+    OR              reduce using rule 55 (predicate -> NOT predicate .)
+    TRANS           reduce using rule 55 (predicate -> NOT predicate .)
+    IGNORE          reduce using rule 55 (predicate -> NOT predicate .)
+    AUTOMATON       reduce using rule 55 (predicate -> NOT predicate .)
+    PATTERN         reduce using rule 55 (predicate -> NOT predicate .)
+    $end            reduce using rule 55 (predicate -> NOT predicate .)
+    }               reduce using rule 55 (predicate -> NOT predicate .)
+    ,               reduce using rule 55 (predicate -> NOT predicate .)
+    ]               reduce using rule 55 (predicate -> NOT predicate .)
+    )               reduce using rule 55 (predicate -> NOT predicate .)
+
+  ! AND             [ shift and go to state 124 ]
+  ! OR              [ shift and go to state 125 ]
+
+
+state 129
+
+    (14) state -> modifiers statekind NAME ( formals ) { rules . }
+    (26) rules -> rules . rule
+    (27) rule -> . conditions TRANS actions
+    (28) conditions -> . event
+    (29) event -> . type { constraints }
+    (30) event -> . type { constraints } WHERE predicate
+    (31) type -> . COMMAND
+    (32) type -> . EVR
+    (33) type -> . CHANNEL
+    (34) type -> . CHANGE
+    (35) type -> . PRODUCT
+
+    }               shift and go to state 137
+    COMMAND         shift and go to state 25
+    EVR             shift and go to state 27
+    CHANNEL         shift and go to state 30
+    CHANGE          shift and go to state 26
+    PRODUCT         shift and go to state 24
+
+
+    type                           shift and go to state 28
+    rule                           shift and go to state 99
+    conditions                     shift and go to state 75
+    event                          shift and go to state 77
+
+state 130
+
+    (42) range -> [ NUMBER , NUMBER . ]
+
+    ]               shift and go to state 138
+
+
+
+state 131
+
+    (48) bitvalue -> value : range .
+
+    }               reduce using rule 48 (bitvalue -> value : range .)
+    ,               reduce using rule 48 (bitvalue -> value : range .)
+
+
+
+state 132
+
+    (47) bitvalues -> bitvalues , bitvalue .
+
+    }               reduce using rule 47 (bitvalues -> bitvalues , bitvalue .)
+    ,               reduce using rule 47 (bitvalues -> bitvalues , bitvalue .)
+
+
+
+state 133
+
+    (53) predicate -> predicate AND predicate .
+    (53) predicate -> predicate . AND predicate
+    (54) predicate -> predicate . OR predicate
+
+    AND             reduce using rule 53 (predicate -> predicate AND predicate .)
+    OR              reduce using rule 53 (predicate -> predicate AND predicate .)
+    TRANS           reduce using rule 53 (predicate -> predicate AND predicate .)
+    IGNORE          reduce using rule 53 (predicate -> predicate AND predicate .)
+    AUTOMATON       reduce using rule 53 (predicate -> predicate AND predicate .)
+    PATTERN         reduce using rule 53 (predicate -> predicate AND predicate .)
+    $end            reduce using rule 53 (predicate -> predicate AND predicate .)
+    }               reduce using rule 53 (predicate -> predicate AND predicate .)
+    ,               reduce using rule 53 (predicate -> predicate AND predicate .)
+    ]               reduce using rule 53 (predicate -> predicate AND predicate .)
+    )               reduce using rule 53 (predicate -> predicate AND predicate .)
+
+  ! AND             [ shift and go to state 124 ]
+  ! OR              [ shift and go to state 125 ]
+
+
+state 134
+
+    (54) predicate -> predicate OR predicate .
+    (53) predicate -> predicate . AND predicate
+    (54) predicate -> predicate . OR predicate
+
+    OR              reduce using rule 54 (predicate -> predicate OR predicate .)
+    TRANS           reduce using rule 54 (predicate -> predicate OR predicate .)
+    IGNORE          reduce using rule 54 (predicate -> predicate OR predicate .)
+    AUTOMATON       reduce using rule 54 (predicate -> predicate OR predicate .)
+    PATTERN         reduce using rule 54 (predicate -> predicate OR predicate .)
+    $end            reduce using rule 54 (predicate -> predicate OR predicate .)
+    }               reduce using rule 54 (predicate -> predicate OR predicate .)
+    ,               reduce using rule 54 (predicate -> predicate OR predicate .)
+    ]               reduce using rule 54 (predicate -> predicate OR predicate .)
+    )               reduce using rule 54 (predicate -> predicate OR predicate .)
+    AND             shift and go to state 124
+
+  ! AND             [ reduce using rule 54 (predicate -> predicate OR predicate .) ]
+  ! OR              [ shift and go to state 125 ]
+
+
+state 135
+
+    (51) predicate -> NAME ( arguments . )
+    (64) arguments -> arguments . , argument
+
+    )               shift and go to state 139
+    ,               shift and go to state 103
+
+
+
+state 136
+
+    (56) predicate -> ( predicate ) .
+
+    AND             reduce using rule 56 (predicate -> ( predicate ) .)
+    OR              reduce using rule 56 (predicate -> ( predicate ) .)
+    TRANS           reduce using rule 56 (predicate -> ( predicate ) .)
+    IGNORE          reduce using rule 56 (predicate -> ( predicate ) .)
+    AUTOMATON       reduce using rule 56 (predicate -> ( predicate ) .)
+    PATTERN         reduce using rule 56 (predicate -> ( predicate ) .)
+    $end            reduce using rule 56 (predicate -> ( predicate ) .)
+    }               reduce using rule 56 (predicate -> ( predicate ) .)
+    ,               reduce using rule 56 (predicate -> ( predicate ) .)
+    ]               reduce using rule 56 (predicate -> ( predicate ) .)
+    )               reduce using rule 56 (predicate -> ( predicate ) .)
+
+
+
+state 137
+
+    (14) state -> modifiers statekind NAME ( formals ) { rules } .
+
+    INITIAL         reduce using rule 14 (state -> modifiers statekind NAME ( formals ) { rules } .)
+    HOT             reduce using rule 14 (state -> modifiers statekind NAME ( formals ) { rules } .)
+    SUCCESS         reduce using rule 14 (state -> modifiers statekind NAME ( formals ) { rules } .)
+    }               reduce using rule 14 (state -> modifiers statekind NAME ( formals ) { rules } .)
+    ALWAYS          reduce using rule 14 (state -> modifiers statekind NAME ( formals ) { rules } .)
+    STATE           reduce using rule 14 (state -> modifiers statekind NAME ( formals ) { rules } .)
+    STEP            reduce using rule 14 (state -> modifiers statekind NAME ( formals ) { rules } .)
+
+
+
+state 138
+
+    (42) range -> [ NUMBER , NUMBER ] .
+
+    }               reduce using rule 42 (range -> [ NUMBER , NUMBER ] .)
+    ,               reduce using rule 42 (range -> [ NUMBER , NUMBER ] .)
+
+
+
+state 139
+
+    (51) predicate -> NAME ( arguments ) .
+
+    AND             reduce using rule 51 (predicate -> NAME ( arguments ) .)
+    OR              reduce using rule 51 (predicate -> NAME ( arguments ) .)
+    TRANS           reduce using rule 51 (predicate -> NAME ( arguments ) .)
+    IGNORE          reduce using rule 51 (predicate -> NAME ( arguments ) .)
+    AUTOMATON       reduce using rule 51 (predicate -> NAME ( arguments ) .)
+    PATTERN         reduce using rule 51 (predicate -> NAME ( arguments ) .)
+    $end            reduce using rule 51 (predicate -> NAME ( arguments ) .)
+    }               reduce using rule 51 (predicate -> NAME ( arguments ) .)
+    ,               reduce using rule 51 (predicate -> NAME ( arguments ) .)
+    ]               reduce using rule 51 (predicate -> NAME ( arguments ) .)
+    )               reduce using rule 51 (predicate -> NAME ( arguments ) .)
+
+

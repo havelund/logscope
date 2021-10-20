@@ -1,0 +1,8 @@
+digraph states {
+node [shape = circle];
+    node_S1[label="@ S1",style=filled,color=lightgrey];
+    node_S2[label="S2(x,y)"];
+    node_error_1[label="# error",style=filled,color=black,fontcolor=white];
+    node_S1 -> node_S2[label="COMMAND{Type : \"FSW\",Number : y,Stem : x}"];
+    node_S2 -> node_error_1[label="EVR{Failure : x,Number : y}"];
+}

@@ -1,0 +1,20 @@
+COMMAND 1 {
+  OBJ_TYPE := "COMMAND" - str
+  Type := "FlightSoftWare" - str
+  Name := "PICT" - str
+  Time := 1900 - int
+}
+
+EVR 2 {
+  Status := "dispatch" - str
+  OBJ_TYPE := "EVR" - str
+  Name := "PICT" - str
+}
+
+EVR 3 {
+  Status := "success" - str
+  OBJ_TYPE := "EVR" - str
+  Name := "PICT" - str
+  Time := 2950 - int
+}
+
