@@ -30,7 +30,7 @@ Let `DIR` be the directory where you install LogScope. Do the following to run L
 $ export PYTHONPATH=$PYTHONPATH:DIR/logscope
 ```
 
-or use LogScope in a IDE.
+or use LogScope in an IDE.
 
 ## Running LogScope
 
