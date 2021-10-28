@@ -1,0 +1,20 @@
+digraph states {
+node [shape = circle];
+    node_Watch[label="@ Watch",style=filled,color=lightgrey];
+    node_Dispatch[label="Dispatch(c,n)",shape=invhouse,color=red];
+    node_Succeed[label="Succeed(c,n)",shape=invhouse,color=red];
+    node_Close[label="Close(c,n)",shape=invhouse,color=red];
+    node_done_1[label="# done"];
+    node_error_1[label="# error",style=filled,color=black,fontcolor=white];
+    node_error_2[label="# error",style=filled,color=black,fontcolor=white];
+    node_error_3[label="# error",style=filled,color=black,fontcolor=white];
+    node_done_2[label="# done"];
+    node_Watch -> node_Dispatch[label="COMMAND{nr : n,cmd : c,kind : \"FSW\"}"];
+    node_Dispatch -> node_done_1[label="EVR{nr : n,cmd : c,name : \"cancel\"}"];
+    node_Dispatch -> node_Succeed[label="EVR{nr : n,cmd : c,name : \"dispatch\"}"];
+    node_Succeed -> node_Close[label="EVR{nr : n,cmd : c,name : \"succeed\"}"];
+    node_Succeed -> node_error_1[label="COMMAND{nr : dc,cmd : c,kind : \"FSW\"}"];
+    node_Succeed -> node_error_2[label="EVR{nr : n,cmd : c,name : \"fail\"}"];
+    node_Close -> node_error_3[label="EVR{nr : n,cmd : c,name : \"succeed\"}"];
+    node_Close -> node_done_2[label="EVR{nr : n,cmd : c,name : \"close\"}"];
+}

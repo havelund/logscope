@@ -1,0 +1,22 @@
+
+automaton M4 {
+  always Watch {
+    COMMAND{cmd : c, nr: n, kind: "FSW"} => Dispatch(c,n)
+  }
+
+  hot state Dispatch(c,n) {
+    EVR{name : "cancel", cmd : c, nr : n} => done
+    EVR{name : "dispatch", cmd : c, nr : n} => Succeed(c,n)
+  }
+
+  hot state Succeed(c,n) {
+    EVR{name : "succeed", cmd : c, nr : n} => Close(c,n)
+    COMMAND{cmd : c, nr : dc, kind : "FSW"} => error
+    EVR{name : "fail", cmd : c, nr : n} => error
+  }
+
+  hot state Close(c,n) {
+    EVR{name : "succeed", cmd : c, nr : n} => error
+    EVR{name : "close", cmd : c, nr : n} => done
+  }
+}

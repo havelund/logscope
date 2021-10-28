@@ -1,0 +1,227 @@
+
+============================
+       RESULTS FOR M4: 
+============================
+
+Errors: 5
+
+*** violated: by event 10 in state:
+
+  state Succeed(c,n) {
+    EVR{nr : n,cmd : c,name : "succeed"} => NoMoreSuccess(c,n),Close(c,n)
+    COMMAND{nr : dc,cmd : c,kind : "FSW"} => error
+    EVR{nr : n,cmd : c,name : "fail"} => error
+  }
+  with bindings: {'c': '3', 'n': '3'}
+
+by transition 2 : COMMAND{'nr': '33', 'cmd': '3', 'kind': "FSW"} => error
+
+violating event:
+
+COMMAND 10 {
+  OBJ_TYPE := "COMMAND" - str
+  cmd := "3" - str
+  nr := "33" - str
+  kind := "FSW" - str
+}
+
+--- error trace: ---
+
+COMMAND 8 {
+  OBJ_TYPE := "COMMAND" - str
+  cmd := "3" - str
+  nr := "3" - str
+  kind := "FSW" - str
+}
+
+EVR 9 {
+  OBJ_TYPE := "EVR" - str
+  cmd := "3" - str
+  name := "dispatch" - str
+  nr := "3" - str
+}
+
+COMMAND 10 {
+  OBJ_TYPE := "COMMAND" - str
+  cmd := "3" - str
+  nr := "33" - str
+  kind := "FSW" - str
+}
+
+
+*** violated: by event 15 in state:
+
+  state Succeed(c,n) {
+    EVR{nr : n,cmd : c,name : "succeed"} => NoMoreSuccess(c,n),Close(c,n)
+    COMMAND{nr : dc,cmd : c,kind : "FSW"} => error
+    EVR{nr : n,cmd : c,name : "fail"} => error
+  }
+  with bindings: {'c': '4', 'n': '4'}
+
+by transition 3 : EVR{'nr': '4', 'cmd': '4', 'name': "fail"} => error
+
+violating event:
+
+EVR 15 {
+  OBJ_TYPE := "EVR" - str
+  cmd := "4" - str
+  name := "fail" - str
+  nr := "4" - str
+}
+
+--- error trace: ---
+
+COMMAND 13 {
+  OBJ_TYPE := "COMMAND" - str
+  cmd := "4" - str
+  nr := "4" - str
+  kind := "FSW" - str
+}
+
+EVR 14 {
+  OBJ_TYPE := "EVR" - str
+  cmd := "4" - str
+  name := "dispatch" - str
+  nr := "4" - str
+}
+
+EVR 15 {
+  OBJ_TYPE := "EVR" - str
+  cmd := "4" - str
+  name := "fail" - str
+  nr := "4" - str
+}
+
+
+*** violated: by event 20 in state:
+
+  state NoMoreSuccess(c,n) {
+    EVR{nr : n,cmd : c,name : "succeed"} => error
+  }
+  with bindings: {'c': '5', 'n': '5'}
+
+by transition 1 : EVR{'nr': '5', 'cmd': '5', 'name': "succeed"} => error
+
+violating event:
+
+EVR 20 {
+  OBJ_TYPE := "EVR" - str
+  cmd := "5" - str
+  name := "succeed" - str
+  nr := "5" - str
+}
+
+--- error trace: ---
+
+COMMAND 16 {
+  OBJ_TYPE := "COMMAND" - str
+  cmd := "5" - str
+  nr := "5" - str
+  kind := "FSW" - str
+}
+
+EVR 17 {
+  OBJ_TYPE := "EVR" - str
+  cmd := "5" - str
+  name := "dispatch" - str
+  nr := "5" - str
+}
+
+EVR 18 {
+  OBJ_TYPE := "EVR" - str
+  cmd := "5" - str
+  name := "succeed" - str
+  nr := "5" - str
+}
+
+EVR 20 {
+  OBJ_TYPE := "EVR" - str
+  cmd := "5" - str
+  name := "succeed" - str
+  nr := "5" - str
+}
+
+
+*** violated: in hot end state:
+
+  state Dispatch(c,n) {
+    EVR{nr : n,cmd : c,name : "cancel"} => done
+    EVR{nr : n,cmd : c,name : "dispatch"} => Succeed(c,n)
+  }
+  with bindings: {'c': '3', 'n': '33'}
+
+--- error trace: ---
+
+COMMAND 10 {
+  OBJ_TYPE := "COMMAND" - str
+  cmd := "3" - str
+  nr := "33" - str
+  kind := "FSW" - str
+}
+
+
+*** violated: in hot end state:
+
+  state Close(c,n) {
+    EVR{nr : n,cmd : c,name : "close"} => done
+  }
+  with bindings: {'c': '6', 'n': '6'}
+
+--- error trace: ---
+
+COMMAND 21 {
+  OBJ_TYPE := "COMMAND" - str
+  cmd := "6" - str
+  nr := "6" - str
+  kind := "FSW" - str
+}
+
+EVR 22 {
+  OBJ_TYPE := "EVR" - str
+  cmd := "6" - str
+  name := "dispatch" - str
+  nr := "6" - str
+}
+
+EVR 23 {
+  OBJ_TYPE := "EVR" - str
+  cmd := "6" - str
+  name := "succeed" - str
+  nr := "6" - str
+}
+
+
+
+Statistics {
+  COMMAND :
+      {'nr': '1', 'cmd': '1', 'kind': 'FSW'} -> 1
+      {'nr': '2', 'cmd': '2', 'kind': 'FSW'} -> 1
+      {'nr': '3', 'cmd': '3', 'kind': 'FSW'} -> 1
+      {'nr': '33', 'cmd': '3', 'kind': 'FSW'} -> 2
+      {'nr': '4', 'cmd': '4', 'kind': 'FSW'} -> 1
+      {'nr': '5', 'cmd': '5', 'kind': 'FSW'} -> 1
+      {'nr': '6', 'cmd': '6', 'kind': 'FSW'} -> 1
+  EVR :
+      {'nr': '1', 'cmd': '1', 'name': 'dispatch'} -> 1
+      {'nr': '1', 'cmd': '1', 'name': 'succeed'} -> 1
+      {'nr': '1', 'cmd': '1', 'name': 'close'} -> 1
+      {'nr': '2', 'cmd': '2', 'name': 'cancel'} -> 1
+      {'nr': '3', 'cmd': '3', 'name': 'dispatch'} -> 1
+      {'nr': '4', 'cmd': '4', 'name': 'dispatch'} -> 1
+      {'nr': '4', 'cmd': '4', 'name': 'fail'} -> 1
+      {'nr': '5', 'cmd': '5', 'name': 'dispatch'} -> 1
+      {'nr': '5', 'cmd': '5', 'name': 'succeed'} -> 2
+      {'nr': '5', 'cmd': '5', 'name': 'close'} -> 1
+      {'nr': '6', 'cmd': '6', 'name': 'dispatch'} -> 1
+      {'nr': '6', 'cmd': '6', 'name': 'succeed'} -> 1
+}
+
+========================
+   Summary of Errors:
+========================
+
+M4  :  5 errors 
+
+specification was violated 5 times
+
+23 events processed in 0 minutes and 0.00572 seconds (4018 events/sec)
